@@ -2,37 +2,45 @@
 	{
 		"id": "aetherium-station",
 		"lang": "en-CA",
+		"platform": "discord",
 		"name": "Aetherium Station",
 		"description": "This is my personal Discord server where I chat with friends and followers. It's a cozy place to hang out, share memes, and talk about art, programming, music, and pretty much anything.",
 		"url": "https://discord.kaelunyx.space/",
-		"rep": "kaelunyx",
-		"icon": "aetherium-station.webp"
+		"rep": "kaelunyx"
 	},
 	{
 		"id": "fbbr",
 		"lang": "pt-BR",
+		"platform": "discord",
 		"name": "Fabulous Beasts BR",
 		"description": "This is the Brazilian server for You Shou Yan. Here you can interact with fans of the animated series and manhua, share your passion for the work, and meet new people.",
 		"url": "https://discord.gg/youshouyanbr",
-		"rep": "kaelunyx",
-		"icon": "fbbr.webp"
+		"rep": "kaelunyx"
 	},
 	{
 		"id": "fbes",
 		"lang": "es",
+		"platform": "discord",
 		"name": "Fabulous Beasts ES",
 		"description": "This is the Spanish YSY server. Here you can talk about Fabulous Beasts in Spanish. It's a great place to connect with other fans who speak the language.",
-		"url": "https://discord.gg/youshouyanes",
-		"rep": "kaelunyx",
-		"icon": "fbes.webp"
+		"url": "https://discord.gg/youshouyanes"
 	},
 	{
 		"id": "imperio-pollus",
 		"lang": "pt-BR",
+		"platform": "discord",
 		"name": "Império Pollus",
 		"description": "Meu servidor trata-se de um abrangente espaço social brasileiro, nele existe todo tipo de pessoa, furries, otakus, músicos e entre outros, o servidor conta com 370 membros e está recentemente se mantendo atualizado, pretendo adicionar muito mais coisas futuramente.",
 		"url": "https://discord.gg/EtW8BYsGBc",
-		"rep": "sibuxiangy",
-		"icon": "imperio-pollus.webp"
+		"rep": "sibuxiangy"
+	},
+	{
+		"id": "library-of-beasts",
+		"lang": "en",
+		"platform": "discord",
+		"name": "Library of Beasts",
+		"description": "A Fabulous Beasts & Project Moon focused community server! Literally an amalgamation of Project Moon sleeper agents and Fabulous Beasts enjoyers, lol. Chill community tho!",
+		"url": "https://discord.gg/CKPg2KEEFC",
+		"rep": "autumnrain1122"
 	}
 ]

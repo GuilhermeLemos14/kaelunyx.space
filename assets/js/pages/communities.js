@@ -11,15 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				article.innerHTML = `
                 <img
-                    src="/communities/icons/${community.icon}"
+                    src="/communities/icons/${community.id}.webp"
                     alt="${community.name} Icon"
                     width="80"
                     height="80" />
                 <h2>${community.name}</h2>
                 <p>${community.description}</p>
                 <a href="${community.url}" class="join-button" rel="external noopener noreferrer" target="_blank">
-                    Join the Server
+                    Join the Community
                 </a>
+				${community.lang ? `<small>Main Language: ${community.lang}</small>` : ""}
                 ${community.rep ? `<small>Rep: ${community.rep}</small>` : ""}
             `;
 
