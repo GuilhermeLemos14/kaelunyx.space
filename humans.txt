@@ -5,13 +5,13 @@ Location: Alagoas, Brasil
 Role: Full-stack dev, cosmic designer, automation enjoyer
 
 /* TECHNOLOGY */
-Stack: HTML, CSS, JS, Jekyll, Ruby, GitHub Pages
-Tools: VS Code, Cursor, Git, Node.js
+Stack: HTML, CSS, JS, Jekyll, GitHub Pages
+Tools: VS Code, Git, GitHub
 Design: SVG sprites, modular includes, cosmic UI vibes
 
 /* SITE */
 Last update: 2026
-Source: Private repository
+Source: Public repository
 Made with: caffeine, curiosity, and a bit of chaos
 
 /* MESSAGE */
