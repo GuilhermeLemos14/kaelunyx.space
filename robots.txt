@@ -13,3 +13,5 @@ Disallow: /.readin
 Disallow: /_includes/
 Disallow: /_layouts/
 Disallow: /_site/
+
+Sitemap: https://kaelunyx.space/sitemap.xml
