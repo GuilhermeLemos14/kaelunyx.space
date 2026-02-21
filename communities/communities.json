@@ -13,21 +13,14 @@
 		"id": "fbbr",
 		"flag": "🇧🇷",
 		"lang": "pt-BR",
-		"platform": "Discord",
+		"platforms": ["Discord", "Reddit"],
 		"name": "Fabulous Beasts BR",
 		"description": "This is the Brazilian server for You Shou Yan. Here you can interact with fans of the animated series and manhua, share your passion for the work, and meet new people.",
-		"url": "https://discord.gg/SZbzTNK7zc",
+		"urls": {
+			"discord": "https://discord.gg/SZbzTNK7zc",
+			"reddit": "https://reddit.com/r/YouShouYanBR/"
+		},
 		"rep": "kaelunyx"
-	},
-	{
-		"id": "fbbr-reddit",
-		"flag": "🇧🇷",
-		"lang": "pt-BR",
-		"platform": "Reddit",
-		"name": "Fabulous Beasts BR Reddit",
-		"description": "This is the Brazilian Reddit community for You Shou Yan. Here you can discuss the animated series and manhua with fans of the work.",
-		"url": "https://reddit.com/r/YouShouYanBR/",
-		"rep": "u/CommandLs"
 	},
 	{
 		"id": "fbes",

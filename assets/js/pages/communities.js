@@ -12,19 +12,29 @@ document.addEventListener("DOMContentLoaded", () => {
 				article.innerHTML = `
 				<span class="id" aria-hidden="true" onclick="copyID('${community.id}')" title="Copy ID">#${community.id}</span>
 				${community.lang ? `<div class="language"><span class="flag">${community.flag}</span>${community.lang}</div>` : ""}
-                ${community.rep ? `<span class="rep">Rep: ${community.rep}</span>` : ""}
-				${community.platform ? `<div class="platform"><svg aria-hidden="true" class="platform-icon ${community.platform.toLowerCase()}"><use href="#${community.platform.toLowerCase()}"/></svg> ${community.platform}</div>` : ""}
-                <img
-                    src="/communities/icons/${community.id}.webp"
-                    alt="${community.name} Icon"
-                    width="80"
-                    height="80" />
-                <h2>${community.name}</h2>
-                <p>${community.description}</p>
-                <a href="${community.url}" class="join-button" rel="external noopener noreferrer" target="_blank">
-                    Join the Community
-                </a>
-            `;
+				${community.rep ? `<span class="rep">Rep: ${community.rep}</span>` : ""}
+				${community.platform ? `<div class="platform"><svg aria-hidden="true" class="platform-icon ${community.platform.toLowerCase()}"><use href="#${community.platform.toLowerCase()}"/></svg> ${community.platform.charAt(0).toUpperCase() + community.platform.slice(1)}</div>` : ""}
+				${community.platforms ? `<div class="platforms">${community.platforms.map((platform) => `<div class="platform"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg> ${platform.charAt(0).toUpperCase() + platform.slice(1)}</div>`).join("")}</div>` : ""}
+				<img
+					src="/communities/icons/${community.id}.webp"
+					alt="${community.name} Icon"
+					width="80"
+					height="80" />
+				<h2>${community.name}</h2>
+				<p>${community.description}</p>
+				${
+					community.urls
+						? `<div class="community-urls">${Object.entries(
+								community.urls,
+							)
+								.map(
+									([platform, url]) =>
+										`<a class="join-button" href="${url}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg> ${platform.charAt(0).toUpperCase() + platform.slice(1)}</a>`,
+								)
+								.join("")}</div>`
+						: `<a href="${community.url}" class="join-button" rel="external noopener noreferrer" target="_blank">Join the Community</a>`
+				}
+			`;
 
 				communitiesSection.appendChild(article);
 				article.addEventListener("click", () => {

@@ -1,1 +1,29 @@
 @charset "UTF-8";
+
+.indent {
+	display: block;
+	margin-inline-start: 40px;
+	margin-block-start: 12px;
+	margin-block-end: 8px;
+}
+
+.copy-email {
+	background-color: var(--button-bg);
+	color: var(--button-fg);
+	font-family: var(--default-font);
+	margin-inline-start: 0.5rem;
+	padding-block: 0.25rem;
+	padding-inline: 0.5rem;
+	border: var(--border);
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 300ms linear;
+}
+
+.copy-email:hover {
+	background-color: var(--button-bg-hover);
+}
+
+.copy-email:focus {
+	outline: var(--outline);
+}

@@ -93,7 +93,25 @@
 	margin-right: 8px;
 }
 
-.community .platform {
+.community > .platforms {
+	position: absolute;
+	bottom: 8px;
+	right: 12px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.community > .platforms > .platform {
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+}
+
+.community > .platform {
 	position: absolute;
 	bottom: 8px;
 	right: 12px;
@@ -104,8 +122,10 @@
 }
 
 .community .platform-icon {
-	height: 20px;
-	width: 20px;
+	color: var(--fg);
+	fill: var(--fg);
+	height: 16px;
+	width: 16px;
 	margin-right: 8px;
 }
 
@@ -117,7 +137,9 @@
 	padding-inline: 20px;
 	border-radius: 8px;
 	text-decoration: none;
+	cursor: pointer;
 	font-weight: bold;
+	font-family: var(--default-font);
 	transition: background-color 300ms linear;
 	align-self: center;
 }
@@ -125,6 +147,27 @@
 .join-button:hover,
 .form-link:hover {
 	background-color: var(--button-bg-hover);
+}
+
+.community-urls {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 8px;
+}
+
+.community-urls .join-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.community-urls .join-button .platform-icon {
+	color: var(--button-fg);
+	fill: var(--button-fg);
+	height: 20px;
+	width: 20px;
+	margin-right: 8px;
 }
 
 .main-footer {
