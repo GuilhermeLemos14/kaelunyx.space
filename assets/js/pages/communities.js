@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function copyID(id) {
-	const fullURL = `${window.location.origin}/#${id}`;
+	const fullURL = `${window.location.href}/#${id}`;
 
 	navigator.clipboard.writeText(fullURL).then(() => {
 		const idElement = document.querySelector(`.community#${id} .id`);
