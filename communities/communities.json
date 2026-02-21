@@ -20,6 +20,16 @@
 		"rep": "kaelunyx"
 	},
 	{
+		"id": "fbbr-reddit",
+		"flag": "🇧🇷",
+		"lang": "pt-BR",
+		"platform": "Reddit",
+		"name": "Fabulous Beasts BR Reddit",
+		"description": "This is the Brazilian Reddit community for You Shou Yan. Here you can discuss the animated series and manhua with fans of the work.",
+		"url": "https://reddit.com/r/YouShouYanBR/",
+		"rep": "u/CommandLs"
+	},
+	{
 		"id": "fbes",
 		"flag": "🇪🇸",
 		"lang": "es",
