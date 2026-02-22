@@ -1,7 +1,6 @@
 [
 	{
 		"id": "aetherium-station",
-		"flag": "🇨🇦",
 		"lang": "en-CA",
 		"platform": "Discord",
 		"name": "Aetherium Station",
@@ -11,7 +10,6 @@
 	},
 	{
 		"id": "fbbr",
-		"flag": "🇧🇷",
 		"lang": "pt-BR",
 		"platforms": ["Discord", "Reddit"],
 		"name": "Fabulous Beasts BR",
@@ -24,7 +22,6 @@
 	},
 	{
 		"id": "fbes",
-		"flag": "🇪🇸",
 		"lang": "es",
 		"platform": "Discord",
 		"name": "Fabulous Beasts ES",
@@ -33,7 +30,6 @@
 	},
 	{
 		"id": "library-of-beasts",
-		"flag": "🇺🇸",
 		"lang": "en",
 		"platform": "Discord",
 		"name": "Library of Beasts",
@@ -42,13 +38,21 @@
 		"rep": "autumnrain1122"
 	},
 	{
-		"id": "confeitaria-do-henri",
-		"flag": "🇧🇷",
+		"id": "henri",
 		"lang": "pt-BR",
 		"platform": "Discord",
 		"name": "Confeitaria do Henri",
 		"description": "Bem-vindos à doceria mais fofinha e aconchegante do Discord! 🧁💖<br>Aqui cada membro é um ingrediente especial que deixa o nosso cantinho ainda mais doce e divertido~ 🍪🌈",
 		"url": "https://discord.gg/yyehbhM3",
 		"rep": "henrigayzao"
+	},
+	{
+		"id": "theo",
+		"lang": "pt-BR",
+		"platform": "Discord",
+		"name": "Theo's room",
+		"description": "Wawa Entre já no server do Theo! :&gt;<br>• Espaço para postar sua arte 🎨<br>• Elogios e feedback construtivo 💬<br>• Muita interação e troca de ideias 💡<br>• Comunidade ativa!<br>• wawa :D",
+		"url": "https://discord.gg/akp5SQ6Xh8",
+		"rep": "theoo_arts"
 	}
 ]
