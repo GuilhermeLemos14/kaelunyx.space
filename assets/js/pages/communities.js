@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						article.innerHTML = `
 				<span class="id" aria-hidden="true" onclick="copyID('${community.id}')" title="Copy ID">#${community.id}</span>
 				${community.lang ? `<div class="language"><span class="flag">${flags[community.lang] || "??"}</span>${community.lang}</div>` : ""}
-				${community.rep ? `<span class="rep">Rep: ${community.rep}</span>` : ""}
+				${community.rep ? `<span class="rep">${Array.isArray(community.rep) ? `Rep: ${community.rep.map((r) => `${r}`).join(",<br>")}` : `Rep: ${community.rep}`}</span>` : ""}
 				${community.platform ? `<div class="platform"><svg aria-hidden="true" class="platform-icon ${community.platform.toLowerCase()}"><use href="#${community.platform.toLowerCase()}"/></svg> ${community.platform.charAt(0).toUpperCase() + community.platform.slice(1)}</div>` : ""}
 				${community.platforms ? `<div class="platforms">${community.platforms.map((platform) => `<div class="platform"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg> ${platform.charAt(0).toUpperCase() + platform.slice(1)}</div>`).join("")}</div>` : ""}
 				<img
