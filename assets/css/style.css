@@ -172,6 +172,11 @@ footer .copyright {
 	font-weight: 600;
 }
 
+#furryring,
+#furryring * {
+	all: none; /* reset */
+}
+
 @media (max-width: 700px) {
 	#wrapper {
 		margin: 0;
