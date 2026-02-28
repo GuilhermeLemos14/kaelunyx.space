@@ -1,5 +1,130 @@
 @charset "UTF-8";
 
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	line-height: 1.6;
+	font-family: var(--default-font);
+	font-display: swap;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: var(--body-bg);
+	background-attachment: fixed;
+	min-height: 100vh;
+	min-height: 100dvh;
+	padding: 0;
+	margin: 0;
+}
+
+#wrapper {
+	background-color: var(--bg);
+	color: var(--fg);
+	border-radius: 20px;
+	box-shadow: #0001 0 0 10px;
+	max-width: 700px;
+	min-height: 100vh;
+	min-height: 100dvh;
+	margin-inline: auto;
+	padding-inline: 32px;
+	z-index: 10;
+}
+
+header {
+	text-align: center;
+	padding: 20px;
+}
+
+header p {
+	font-size: 16px;
+	text-align: center;
+}
+
+nav {
+	display: flex;
+	padding-block: 8px;
+	justify-content: center;
+	gap: 28px;
+}
+
+nav a {
+	background-color: var(--button-bg);
+	color: var(--button-fg);
+	padding-block: 12px;
+	padding-inline: 16px;
+	border-radius: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	transition: background-color 300ms linear;
+}
+
+nav a:hover,
+nav a:focus-visible {
+	background-color: var(--button-bg-hover);
+}
+
+nav a:focus-visible {
+	outline: var(--outline);
+}
+
+a {
+	color: var(--link-fg);
+	transition: color 300ms linear;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	text-align: justify;
+}
+
+strong {
+	color: var(--cosmic-adaptive-blue);
+	font-weight: 700;
+}
+
+abbr {
+	color: color-mix(in srgb, var(--fg), var(--cosmic-adaptive-blue));
+	cursor: help;
+	text-decoration-line: none;
+}
+
+abbr:hover {
+	text-decoration-line: underline;
+}
+
+section {
+	padding-block: 3rem;
+	border-block-start: var(--border);
+}
+
+section p,
+.iframe-wrapper {
+	margin-inline: 20px;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	color: var(--cosmic-adaptive-purple);
+	margin-bottom: 1rem;
+}
+
+ul li strong {
+	color: var(--cosmic-neon);
+}
+
+h3 a {
+	color: inherit;
+}
+
 .indent {
 	display: block;
 	margin-inline-start: 40px;
@@ -24,6 +149,13 @@
 	background-color: var(--button-bg-hover);
 }
 
-.copy-email:focus {
+.copy-email:focus-visible {
 	outline: var(--outline);
+}
+
+@media (max-width: 700px) {
+	#wrapper {
+		margin: 0;
+		border-radius: 0;
+	}
 }

@@ -5,10 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex" />
 		<title>404 Page Not Found</title>
-		<link
-			rel="shortcut icon"
-			href="/public/favicon.ico"
-			type="image/x-icon" />
+		<link rel="shortcut icon" href="/public/favicon.png" type="image/png" />
 		<style>
 			:root {
 				--bg: #f2f2f2;
@@ -70,12 +67,12 @@
 			textarea:hover,
 			button:hover {
 				background-color: hsl(from var(--bg) h s calc(l - 2));
-				outline: 1px solid #555;
+				outline: 2px solid #555;
 			}
 
-			input:focus,
-			textarea:focus,
-			button:focus {
+			input:focus-visible,
+			textarea:focus-visible,
+			button:focus-visible {
 				outline: 2px solid #333;
 			}
 
@@ -84,9 +81,17 @@
 				margin-bottom: 0.25rem;
 			}
 
+			button {
+				cursor: pointer;
+			}
+
 			.required::after {
 				content: " *";
 				color: red;
+			}
+
+			:not(form):invalid {
+				outline: 2px solid red !important;
 			}
 		</style>
 		<script src="/assets/js/stars.js" defer></script>
@@ -105,8 +110,8 @@
 		<a class="page-link" href="/">Return to Index</a>
 		<p>You can propose a new page by filling out the form below:</p>
 		<form action="https://formspree.io/f/xvzbpayl" method="post">
-			<label for="site-url">Website URL:</label>
-			<input type="url" id="site-url" name="site_url" />
+			<label for="site-url" class="required">Website URL:</label>
+			<input type="url" id="site-url" name="site_url" required />
 			<label for="email" class="required">Email address:</label>
 			<input
 				type="email"
@@ -115,12 +120,20 @@
 				placeholder="example@email.com"
 				required />
 			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" placeholder="Your name" />
+			<input
+				type="text"
+				id="name"
+				name="name"
+				placeholder="Your name"
+				min="3"
+				max="20" />
 			<label for="description" class="required">Page description:</label>
 			<textarea
 				id="description"
 				name="description"
 				placeholder="Describe the page you'd like to propose"
+				min="20"
+				max="1000"
 				required></textarea>
 			<button type="submit">Submit Proposal</button>
 			<p><span style="color: red">*</span> Required fields</p>

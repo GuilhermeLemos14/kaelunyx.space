@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-@import "/assets/css/footer.css";
+@import "/assets/css/reset.css";
 @import "/assets/css/stars.css";
-@import "/assets/css/vars.css";
 
 html {
 	margin: 0;
@@ -12,11 +11,8 @@ html {
 }
 
 body {
-	background: linear-gradient(
-		to bottom,
-		var(--bg),
-		hsl(from var(--cosmic-purple) h s calc(l - 16))
-	);
+	background: var(--body-bg);
+	background-attachment: fixed;
 	color: var(--cosmic-light);
 	font-family: var(--default-font);
 	text-align: center;
@@ -42,27 +38,32 @@ header {
 
 h1 {
 	font-size: 2.5rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: 12px;
 }
 
 p {
 	margin-block-end: 20px;
 }
 
+main {
+	padding: 0;
+	margin: 0;
+}
+
 #link-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-block-start: 20px;
 	margin-inline: auto;
 	gap: 20px;
-	min-width: 180px;
+	min-width: 220px;
+	padding: 0;
 	position: relative;
 }
 
 #link-wrapper a {
 	display: inline-block;
-	padding: 1rem 2rem;
+	padding: 1rem;
 	background: var(--cosmic-blue);
 	border-radius: 8px;
 	text-decoration: none;
@@ -77,6 +78,24 @@ p {
 	background: hsl(from var(--cosmic-blue) h calc(s - 16) calc(l - 8));
 }
 
-a:focus {
+a:focus-visible,
+button:focus-visible {
 	outline: var(--outline);
+}
+
+footer {
+	background: linear-gradient(to bottom, #555, #a8a8a8);
+	background-clip: text;
+	color: transparent;
+	text-align: center;
+}
+
+footer p {
+	text-align: center;
+	margin-block: 8px;
+}
+
+footer .copyright {
+	margin-block-start: 16px;
+	font-weight: 600;
 }

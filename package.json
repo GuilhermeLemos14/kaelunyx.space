@@ -1,8 +1,7 @@
 {
 	"name": "me.kaelunyx.space",
-	"version": "5.11.1",
+	"version": "6.0.0",
 	"description": "My website. Have a look.",
-	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"sass": "sass --watch assets/scss:assets/css"
