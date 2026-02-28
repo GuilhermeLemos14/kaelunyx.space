@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+:root {
+	--default-font: "Space Grotesk", sans-serif;
+
+	--bg-primary: #0f0f0f;
+	--bg-secondary: #1a1a1a;
+	--text-primary: #e0e0e0;
+	--text-secondary: #a0a0a0;
+	--accent: #6366f1;
+	--accent-hover: #3c4bcf;
+	--border: #2a2a2a;
+}

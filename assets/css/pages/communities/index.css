@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+#communities {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+	padding: 20px;
+}
+
+.community {
+	background-color: var(--bg-secondary);
+	border: var(--border);
+	border-radius: 12px;
+	padding: 24px;
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	scroll-margin: 16px;
+	transition:
+		transform 300ms ease-in-out,
+		box-shadow 300ms ease-in-out;
+	border: 2px solid
+		color-mix(in srgb, var(--bg-secondary) 90%, var(--text-primary));
+}
+
+.community:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* absolute hell */
+:not(:has(.community.target)) .community,
+:not(:has(.community:target)) .community {
+	display: block;
+}
+
+:has(.community.target) .community:not(.target),
+:has(.community:target) .community:not(:target) {
+	display: none;
+}
+
+.community img {
+	margin-bottom: 16px;
+	border-radius: 8px;
+}
+
+.community h2 {
+	color: var(--accent);
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+.community p {
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.community .id {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: #ccc;
+	cursor: pointer;
+}
+
+.community .rep {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: #ccc;
+}
+
+.community .language {
+	position: absolute;
+	bottom: 4px;
+	left: 12px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+
+.community .language .flag {
+	font-size: 20px;
+	margin-right: 8px;
+}
+
+.community > .platforms {
+	position: absolute;
+	bottom: 8px;
+	right: 12px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.community > .platforms > .platform {
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+}
+
+.community > .platform {
+	position: absolute;
+	bottom: 8px;
+	right: 12px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+
+.community .platform-icon {
+	color: var(--text-primary);
+	fill: var(--text-primary);
+	height: 16px;
+	width: 16px;
+	margin-right: 8px;
+}
+
+.join {
+	color: var(--accent);
+	display: block;
+	margin-bottom: 8px;
+}
+
+.join-button,
+.form-link {
+	background-color: var(--accent);
+	color: var(--text-primary);
+	padding-block: 10px;
+	padding-inline: 20px;
+	border-radius: 8px;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: var(--default-font);
+	transition: background-color 300ms ease-in-out;
+	align-self: center;
+}
+
+.join-button:hover,
+.form-link:hover {
+	background-color: var(--accent-hover);
+}
+
+.community-urls {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 8px;
+}
+
+.community-urls .join-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.community-urls .join-button .platform-icon {
+	color: var(--text-primary);
+	fill: var(--text-primary);
+	height: 20px;
+	width: 20px;
+	margin-right: 8px;
+}
+
+.main-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-block: 24px;
+	gap: 0;
+}
+
+.main-footer p {
+	margin: 0;
+	margin-block-end: 16px;
+}

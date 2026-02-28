@@ -1,0 +1,5 @@
+[readin]
+copy = true
+hideuser = true
+showhidden = true
+ignore = .gitignore, .gitattributes, .DS_Store

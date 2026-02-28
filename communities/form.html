@@ -1,0 +1,69 @@
+---
+layout: default
+title: Kaelunyx — Submit Community
+description: Submit your community to be featured on Kaelunyx's website.
+url: https://kaelunyx.space/communities/form.html
+style: communities/form.css
+json-ld:
+    type: WebPage
+---
+
+<header>
+	<h1>Submit Your Community</h1>
+	<p>
+		Know a community that fits my interests? Share it here, and I might
+		include it on my communities page!
+	</p>
+	<nav class="links" aria-label="Main navigation">
+		<div class="left">
+			<a href="https://art.kaelunyx.space">Art</a>
+			<a href="https://blog.kaelunyx.space">Blog </a>
+			<a href="https://me.kaelunyx.space">Me</a>
+			<a href="https://guilhermelemos14.github.io">Portfolio</a>
+		</div>
+		<div class="right">
+			<a href="/">Portal</a>
+			<a href="/communities/">Communities</a>
+			<a href="/sitemap/">Sitemap</a>
+			<a href="/webrings/">Webrings</a>
+		</div>
+	</nav>
+</header>
+<main>
+	<form action="https://formspree.io/f/xbdarzbp" method="post">
+		<label for="rep">Community Representative:</label>
+		<input
+			type="text"
+			id="rep"
+			name="rep"
+			placeholder="Your username on your community platform"
+			min="3"
+			max="30"
+			required />
+		<label for="community-name">Community Name:</label>
+		<input
+			type="text"
+			id="community-name"
+			name="community-name"
+			placeholder="My Community"
+			min="1"
+			max="100"
+			required />
+		<label for="community-description">Description:</label>
+		<textarea
+			id="community-description"
+			name="community-description"
+			placeholder="Describe your community and what makes it special"
+			min="100"
+			max="400"
+			required></textarea>
+		<label for="community-link">Link to Community:</label>
+		<input
+			type="url"
+			id="community-link"
+			name="community-link"
+			placeholder="https://platform.com/mycommunity"
+			required />
+		<button type="submit">Submit Community</button>
+	</form>
+</main>

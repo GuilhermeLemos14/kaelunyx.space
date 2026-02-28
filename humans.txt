@@ -13,6 +13,7 @@ Design: SVG sprites, modular includes, cosmic UI vibes
 Last update: 2026
 Source: Public repository
 Made with: caffeine, curiosity, and a bit of chaos
+Version: 6.0
 
 /* MESSAGE */
 If you're reading this, you're probably a curious human.

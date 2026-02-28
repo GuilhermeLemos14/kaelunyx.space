@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition-duration: 120ms !important;
+		transition-timing-function: linear !important;
+		transform: none !important;
+	}
+
+	html {
+		scroll-behavior: auto !important;
+	}
+}

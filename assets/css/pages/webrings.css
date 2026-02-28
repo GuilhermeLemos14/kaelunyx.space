@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+#webrings {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+	max-width: 800px;
+	height: 100%;
+}
+
+#webrings * {
+	all: none; /* reset */
+}
