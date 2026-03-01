@@ -2,6 +2,7 @@
 
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
@@ -37,7 +38,7 @@ header p {
 
 main {
 	max-width: 800px;
-	margin: 0 auto;
+	margin-inline: auto;
 	padding: 2rem;
 	width: 100%;
 }
@@ -47,31 +48,47 @@ main > p {
 	color: var(--text-secondary);
 }
 
-.links {
-	display: flex;
-	justify-content: space-between;
-	gap: 2rem;
-	padding: 1rem 0.5rem;
+#nav-wrapper {
+	overflow-x: auto;
+	max-width: 1000px;
 	border-top: 1px solid var(--border);
 	border-bottom: 1px solid var(--border);
-	max-width: 1000px;
 	margin-inline: auto;
-	margin-block-start: 20px;
+	margin-block: 20px;
 }
 
-.links div {
+#nav-wrapper nav {
 	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	padding: 1rem 0.5rem;
+	height: 100%;
+	width: 100%;
+}
+
+#nav-wrapper ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: nowrap;
 	gap: 1.5rem;
 }
 
-.links a {
+#nav-wrapper a {
+	border-radius: 4px;
 	color: var(--accent);
 	text-decoration: none;
 	transition: color 0.2s;
 }
 
-.links a:hover {
+#nav-wrapper a:hover {
 	color: var(--accent-hover);
+}
+
+#nav-wrapper a:focus-visible {
+	color: var(--accent-hover);
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
 }
 
 footer {

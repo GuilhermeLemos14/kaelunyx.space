@@ -32,6 +32,7 @@ button:hover {
 input:focus-visible,
 textarea:focus-visible,
 button:focus-visible {
+	background-color: hsl(from var(--bg-secondary) h s calc(l - 2));
 	outline: 2px solid var(--accent);
 }
 
@@ -61,7 +62,8 @@ button {
 	font-size: 1rem;
 }
 
-button:hover {
+button:hover,
+button:focus-visible {
 	background-color: var(--bg-secondary);
 }
 

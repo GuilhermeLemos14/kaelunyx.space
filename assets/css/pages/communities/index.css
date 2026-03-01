@@ -27,7 +27,8 @@
 		color-mix(in srgb, var(--bg-secondary) 90%, var(--text-primary));
 }
 
-.community:hover {
+.community:hover,
+.community:has(.join-button:focus-visible) {
 	transform: translateY(-4px);
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -152,8 +153,16 @@
 }
 
 .join-button:hover,
-.form-link:hover {
+.join-button:focus-visible,
+.form-link:hover,
+.form-link:focus-visible {
 	background-color: var(--accent-hover);
+}
+
+.join-button:focus-visible,
+.form-link:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
 }
 
 .community-urls {

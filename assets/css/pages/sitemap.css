@@ -18,6 +18,7 @@ main a {
 	background-color: var(--bg-secondary);
 	color: var(--accent);
 	border: 1px solid var(--border);
+	outline: 1px solid transparent;
 	border-radius: 8px;
 	cursor: pointer;
 	display: block;
@@ -34,8 +35,7 @@ main a:focus-visible {
 	border-color: var(--accent);
 	box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 	transition: all 0.3s ease-in-out;
-	border: 2px solid var(--accent);
-	outline: none;
+	outline-color: var(--accent);
 }
 
 main a .description {
