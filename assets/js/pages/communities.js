@@ -16,32 +16,43 @@ document.addEventListener("DOMContentLoaded", () => {
 						article.className = "community";
 						article.id = community.id;
 
+						// I love ilegible code
 						article.innerHTML = `
-				<span class="id" aria-hidden="true" onclick="copyID('${community.id}')" title="Copy ID">#${community.id}</span>
-				${community.lang ? `<div class="language"><span class="flag">${flags[community.lang] || "??"}</span>${community.lang}</div>` : ""}
-				${community.rep ? `<span class="rep">${Array.isArray(community.rep) ? `Rep: ${community.rep.map((r) => `${r}`).join(",<br>")}` : `Rep: ${community.rep}`}</span>` : ""}
-				${community.platform ? `<div class="platform"><svg aria-hidden="true" class="platform-icon ${community.platform.toLowerCase()}"><use href="#${community.platform.toLowerCase()}"/></svg> ${community.platform.charAt(0).toUpperCase() + community.platform.slice(1)}</div>` : ""}
-				${community.platforms ? `<div class="platforms">${community.platforms.map((platform) => `<div class="platform"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg> ${platform.charAt(0).toUpperCase() + platform.slice(1)}</div>`).join("")}</div>` : ""}
-				<img
-					src="/communities/icons/${community.id}.webp"
-					alt="${community.name} Icon"
-					width="80"
-					height="80" />
-				<h2>${community.name}</h2>
-				<p>${community.description}</p>
-				${
-					community.urls
-						? `<strong class="join">Join the Community</strong> <div class="community-urls">${Object.entries(
-								community.urls,
-							)
-								.map(
-									([platform, url]) =>
-										`<a class="join-button" href="${url}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg>${platform.charAt(0).toUpperCase() + platform.slice(1)}</a>`,
-								)
-								.join("")}</div>`
-						: `<a href="${community.url}" class="join-button" rel="external noopener noreferrer" target="_blank">Join the Community</a>`
-				}
-			`;
+						<span class="id" aria-hidden="true" onclick="copyID('${community.id}')" title="Copy ID">#${community.id}</span>
+
+						${community.lang ? `<div class="language"><span class="flag">${flags[community.lang] || "??"}</span>${community.lang}</div>` : ""}
+
+						${community.rep ? `<span class="rep">${Array.isArray(community.rep) ? `Rep: ${community.rep.map((r) => `${r}`).join(",<br>")}` : `Rep: ${community.rep}`}</span>` : ""}
+
+						${community.platform ? `<div class="platform"><svg aria-hidden="true" class="platform-icon ${community.platform.toLowerCase()}"><use href="#${community.platform.toLowerCase()}"/></svg> ${community.platform.charAt(0).toUpperCase() + community.platform.slice(1)}</div>` : ""}
+
+						${community.platforms ? `<div class="platforms">${community.platforms.map((platform) => `<div class="platform"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg> ${platform.charAt(0).toUpperCase() + platform.slice(1)}</div>`).join("")}</div>` : ""}
+						
+						<img
+							src="/communities/icons/${community.id}.webp"
+							decoding="async"
+							loading="lazy"
+							alt="${community.name} Icon"
+							width="80"
+							height="80"
+						/>
+						
+						<h2>${community.name}</h2>
+						<p>${community.description}</p>
+						
+						${
+							community.urls
+								? `<strong class="join">Join the Community</strong> <div class="community-urls">${Object.entries(
+										community.urls,
+									)
+										.map(
+											([platform, url]) =>
+												`<a class="join-button" href="${url}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="platform-icon ${platform.toLowerCase()}"><use href="#${platform.toLowerCase()}"/></svg>${platform.charAt(0).toUpperCase() + platform.slice(1)}</a>`,
+										)
+										.join("")}</div>`
+								: `<a href="${community.url}" class="join-button" rel="external noopener noreferrer" target="_blank">Join the Community</a>`
+						}
+						`;
 
 						communitiesSection.appendChild(article);
 						article.addEventListener("click", () => {

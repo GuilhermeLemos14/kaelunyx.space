@@ -8,10 +8,6 @@ main h2 {
 
 main ul {
 	list-style: none;
-	padding: 0;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 1rem;
 }
 
 main a {
@@ -25,7 +21,7 @@ main a {
 	font-size: 1.1rem;
 	font-weight: 500;
 	padding: 1.5rem;
-	transition: all 0.3s ease-in-out;
+	transition: all 300ms ease-in-out;
 	text-decoration: none;
 }
 
@@ -34,23 +30,115 @@ main a:focus-visible {
 	background-color: var(--bg-secondary);
 	border-color: var(--accent);
 	box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-	transition: all 0.3s ease-in-out;
+	transition: all 300ms ease-in-out;
 	outline-color: var(--accent);
 }
 
-main a .description {
+main a .description,
+main li .pages {
 	color: var(--text-secondary);
 	font-size: 0.9rem;
-	margin-top: 0.5rem;
 	opacity: 0;
-	visibility: hidden;
 	max-height: 0;
-	transition: all 0.3s ease-in-out 0.15s;
+	margin: 0;
+	transition: all 300ms ease-in-out 120ms;
+	transform: translateY(-12px);
+	visibility: hidden;
 }
 
 main a:hover .description,
-main a:focus-visible .description {
-	visibility: visible;
+main a:focus-visible .description,
+main li:has(a:hover) .pages,
+main li:has(a:focus-visible) .pages,
+main li:has(.pages a:hover) > a .description,
+main li:has(.pages a:focus-visible) > a .description {
+	display: block;
 	opacity: 1;
-	max-height: 100px;
+	max-height: 1000px;
+	margin-block-start: 12px;
+	transform: translateY(0px);
+	visibility: visible;
+}
+
+#pages a {
+	margin-block: 1rem;
+}
+
+#pages a .description,
+#pages li .pages {
+	padding-inline: 4px;
+}
+
+#pages > li > ul {
+	margin-inline-start: 20px;
+}
+
+#pages > li > ul > li a {
+	color: var(--accent);
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+#pages > li:hover > ul,
+#pages > li:focus-visible > ul {
+	margin-block-start: 4px;
+}
+
+#pages > li:hover > ul > li,
+#pages > li:focus-visible > ul > li {
+	margin-block: 12px;
+}
+
+#other {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	main a {
+		background-color: var(--bg-secondary);
+		color: var(--accent);
+		border: 1px solid var(--border);
+		outline: 1px solid transparent;
+		border-radius: 8px;
+		cursor: pointer;
+		display: block;
+		font-size: 1.1rem;
+		font-weight: 500;
+		padding: 1.5rem;
+		transition: all 100ms ease-in-out;
+		text-decoration: none;
+	}
+
+	main a:hover,
+	main a:focus-visible {
+		background-color: var(--bg-secondary);
+		border-color: var(--accent);
+		box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+		transition: all 100ms ease-in-out;
+		outline-color: var(--accent);
+	}
+
+	main a .description,
+	main li .pages {
+		opacity: 1;
+		visibility: visible;
+		transition: none;
+		max-height: 1000px;
+		margin-block-start: 12px;
+		transform: none;
+	}
+
+	#pages > li > ul,
+	#pages > li > ul {
+		margin-block-start: 4px;
+	}
+
+	#pages > li > ul > li,
+	#pages > li > ul > li {
+		margin-block: 12px;
+	}
 }
