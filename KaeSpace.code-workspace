@@ -21,6 +21,10 @@
 			"path": "me",
 		},
 		{
+			"name": "portfolio.kaelunyx.space",
+			"path": "portfolio",
+		},
+		{
 			"name": "kaelunyx.space",
 			"path": "site",
 		},
