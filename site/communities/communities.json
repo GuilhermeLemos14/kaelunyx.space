@@ -1,0 +1,70 @@
+[
+	{
+		"id": "fbbr",
+		"lang": "pt-BR",
+		"platforms": ["Discord", "Reddit"],
+		"name": "Fabulous Beasts BR",
+		"description": "This is the Brazilian community for You Shou Yan. Here you can interact with fans of the animated series and manhua, share your passion for the work, and meet new people.",
+		"urls": {
+			"discord": "https://discord.gg/SZbzTNK7zc",
+			"reddit": "https://reddit.com/r/YouShouYanBR/"
+		},
+		"rep": ["kaelunyx", "u/CommandLs"]
+	},
+	{
+		"id": "okami",
+		"lang": "en",
+		"platforms": ["Discord", "Reddit"],
+		"name": "Ōkami",
+		"description": "We started as a discord mainly for the r/Okami subreddit and we also share main staff. It's grown over time to be one of the largest Okami servers!<br>We also link to other Okami servers, Okami communities on other sites, Okami-like games, and more on our resources page.",
+		"urls": {
+			"discord": "https://discord.gg/SAZ4NeBCE3",
+			"reddit": "https://reddit.com/r/Okami/"
+		},
+		"rep": ["sapphireryu", "u/SapphireRyu"]
+	},
+	{
+		"id": "aetherium-station",
+		"lang": "en-CA",
+		"platform": "Discord",
+		"name": "Aetherium Station",
+		"description": "This is my personal Discord server where I chat with friends and followers. It's a cozy place to hang out, share memes, and talk about art, programming, music, and pretty much anything.",
+		"url": "https://discord.kaelunyx.space/",
+		"rep": "kaelunyx"
+	},
+	{
+		"id": "fbes",
+		"lang": "es",
+		"platform": "Discord",
+		"name": "Fabulous Beasts ES",
+		"description": "This is the Spanish YSY server. Here you can talk about Fabulous Beasts in Spanish. It's a great place to connect with other fans who speak the language.",
+		"url": "https://discord.gg/youshouyanes"
+	},
+	{
+		"id": "henri",
+		"lang": "pt-BR",
+		"platform": "Discord",
+		"name": "Confeitaria do Henri",
+		"description": "Bem-vindos à doceria mais fofinha e aconchegante do Discord! 🧁💖<br>Aqui cada membro é um ingrediente especial que deixa o nosso cantinho ainda mais doce e divertido~ 🍪🌈",
+		"url": "https://discord.gg/yyehbhM3",
+		"rep": "henrigayzao"
+	},
+	{
+		"id": "library-of-beasts",
+		"lang": "en",
+		"platform": "Discord",
+		"name": "Library of Beasts",
+		"description": "A Fabulous Beasts & Project Moon focused community server! Literally an amalgamation of Project Moon sleeper agents and Fabulous Beasts enjoyers, lol. Chill community tho!",
+		"url": "https://discord.gg/CKPg2KEEFC",
+		"rep": "autumnrain1122"
+	},
+	{
+		"id": "theo",
+		"lang": "pt-BR",
+		"platform": "Discord",
+		"name": "Theo's room",
+		"description": "Wawa Entre já no server do Theo! :&gt;<br>• Espaço para postar sua arte 🎨<br>• Elogios e feedback construtivo 💬<br>• Muita interação e troca de ideias 💡<br>• Comunidade ativa!<br>• wawa :D",
+		"url": "https://discord.gg/akp5SQ6Xh8",
+		"rep": "theoo_arts"
+	}
+]

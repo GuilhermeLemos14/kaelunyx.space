@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	font-family: var(--default-font);
+	line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+}
+
+header {
+	padding: 3rem 2rem;
+	text-align: center;
+	border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	color: var(--accent);
+}
+
+header p {
+	color: var(--text-secondary);
+	font-size: 1.1rem;
+}
+
+main {
+	max-width: 800px;
+	margin-inline: auto;
+	padding: 2rem;
+	width: 100%;
+}
+
+main > p {
+	margin-bottom: 2rem;
+	color: var(--text-secondary);
+}
+
+#nav-wrapper {
+	overflow-x: auto;
+	max-width: 1000px;
+	border-top: 1px solid var(--border);
+	border-bottom: 1px solid var(--border);
+	margin-inline: auto;
+	margin-block: 20px;
+}
+
+#nav-wrapper nav {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	padding: 1rem 0.5rem;
+	height: 100%;
+	width: 100%;
+}
+
+#nav-wrapper ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 1.5rem;
+}
+
+#nav-wrapper a {
+	border-radius: 4px;
+	color: var(--accent);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+#nav-wrapper a:hover {
+	color: var(--accent-hover);
+}
+
+#nav-wrapper a:focus-visible {
+	color: var(--accent-hover);
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+footer {
+	margin-top: auto;
+	border-top: 1px solid var(--border);
+	padding: 2rem;
+	text-align: center;
+	background-color: var(--bg-secondary);
+}
+
+footer .copyright {
+	color: var(--text-secondary);
+	font-size: 0.9rem;
+}

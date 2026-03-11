@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"name": "Kaelunyx Space",
+			"path": ".",
+		},
+		{
+			"name": "art.kaelunyx.space",
+			"path": "art",
+		},
+		{
+			"name": "blog.kaelunyx.space",
+			"path": "blog",
+		},
+		{
+			"name": "discord.kaelunyx.space",
+			"path": "discord",
+		},
+		{
+			"name": "kaelunyx.space",
+			"path": "site",
+		},
+		{
+			"name": "me.kaelunyx.space",
+			"path": "me",
+		},
+	],
+	"settings": {
+		"cSpell.words": ["kaelunyx", "guilherme", "lemos"],
+		"liveServer.settings.multiRootWorkspaceName": "kaelunyx.space",
+		"liveServer.settings.file": "404.html",
+		"liveServer.settings.root": "/_site",
+	},
+}

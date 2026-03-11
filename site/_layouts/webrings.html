@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-CA">
+	<head>
+		{% include head.html title=page.title description=page.description
+		url=page.url noindex=page.noindex nostyle=page.nostyle
+		noscript=page.noscript %} {% if page.style %}
+		<link rel="stylesheet" href="/assets/css/pages/{{ page.style }}" />
+		{% endif %} {% if page.script %}
+		<script src="/assets/js/pages/{{ page.script }}"></script>
+		{% endif %} {% if page.jsonld %}
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "{{ page.json-ld.type | default: 'WebSite' }}",
+				"name": "Kaelunyx Space",
+				"url": "https://kaelunyx.space/",
+				"description": "{{ page.description | escape }}",
+				"publisher": {
+					"@type": "Person",
+					"name": "{{ site.autor }}"
+				},
+				"inLanguage": "en-CA"
+			}
+		</script>
+		{% endif %} {% include webrings.html %}
+	</head>
+	<body>
+		{% include sprite.svg %} {{ content }} {% include footer.html
+		ano=site.ano autor=site.autor %}
+	</body>
+</html>

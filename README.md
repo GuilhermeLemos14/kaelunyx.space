@@ -1,6 +1,6 @@
-# me.kaelunyx.space
+# kaelunyx.space
 
-My website. Have a look.
+Kaelunyx Website. Have fun.
 
 ## Licence
 
