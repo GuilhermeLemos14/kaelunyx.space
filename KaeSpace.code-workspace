@@ -17,12 +17,12 @@
 			"path": "discord",
 		},
 		{
-			"name": "kaelunyx.space",
-			"path": "site",
-		},
-		{
 			"name": "me.kaelunyx.space",
 			"path": "me",
+		},
+		{
+			"name": "kaelunyx.space",
+			"path": "site",
 		},
 	],
 	"settings": {
