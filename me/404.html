@@ -84,6 +84,10 @@
 				cursor: pointer;
 			}
 
+			span {
+				color: red;
+			}
+
 			.required::after {
 				content: " *";
 				color: red;
@@ -135,7 +139,7 @@
 				max="1000"
 				required></textarea>
 			<button type="submit">Submit Proposal</button>
-			<p><span style="color: red">*</span> Required fields</p>
+			<p><span>*</span> Required fields</p>
 		</form>
 	</body>
 </html>

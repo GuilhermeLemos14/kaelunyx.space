@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"name": "Kaelunyx Space",
+			"name": "Overview",
 			"path": ".",
 		},
 		{
@@ -30,9 +30,27 @@
 		},
 	],
 	"settings": {
-		"cSpell.words": ["kaelunyx", "guilherme", "lemos"],
-		"liveServer.settings.multiRootWorkspaceName": "kaelunyx.space",
+		"cSpell.words": [
+			"evenodd",
+			"guilherme",
+			"kaelunyx",
+			"lemos",
+			"multifandom",
+			"rivenhart",
+			"rivenheart",
+			"sylen",
+			"toyhouse",
+			"webring",
+			"webrings",
+		],
+		"json.schemas": [
+			{
+				"fileMatch": ["/.htmlhintrc"],
+				"url": "https://json.schemastore.org/htmlhint.json",
+			},
+		],
 		"liveServer.settings.file": "404.html",
+		"liveServer.settings.multiRootWorkspaceName": "kaelunyx.space",
 		"liveServer.settings.root": "/_site",
 	},
 }

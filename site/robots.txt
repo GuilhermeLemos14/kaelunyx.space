@@ -7,7 +7,6 @@ Disallow: /assets/css/*.map
 Disallow: /node_modules/
 Disallow: /package.json
 Disallow: /package-lock.json
-Disallow: /.readin
 
 # Pastas internas do Jekyll (não são servidas, mas reforçamos)
 Disallow: /_includes/

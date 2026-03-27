@@ -22,10 +22,13 @@
 				"inLanguage": "en-CA"
 			}
 		</script>
-		{% endif %}
+		{% endif %} {% if page.webrings %} {% include webrings.html %} {% endif
+		%}
 	</head>
 	<body>
-		{% include sprite.svg %} {{ content }} {% include footer.html
-		ano=site.ano autor=site.autor %}
+		{% include header.html title=page.header.title
+		subtitle=page.header.subtitle %}
+		<main>{{ content }}</main>
+		{% include footer.html ano=site.ano autor=site.autor %}
 	</body>
 </html>
