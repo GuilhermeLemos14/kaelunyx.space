@@ -2,7 +2,7 @@
 Developer: Guilherme Lemos
 Site: https://kaelunyx.space
 Location: Alagoas, Brasil
-Role: Front-end dev, cosmic designer, automation enjoyer
+Role: Frontend dev, cosmic designer, automation enjoyer
 
 /* TECHNOLOGY */
 Stack: HTML, CSS, JS, Jekyll, Cloudflare
