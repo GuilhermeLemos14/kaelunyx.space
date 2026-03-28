@@ -1,0 +1,27 @@
+- category: "My Socials"
+  links:
+      - name: "Discord"
+        url: "https://discord.com/users/1130534537290592367"
+
+      - name: "GitHub"
+        url: "https://github.com/GuilhermeLemos14"
+
+      - name: "Instagram"
+        url: "https://instagram.com/kaelunyx"
+
+      - name: "Pronouns"
+        url: "https://en.pronouns.page/u/kaelunyx"
+
+      - name: "Reddit"
+        url: "https://reddit.com/u/CommandLs"
+
+      - name: "Toyhouse"
+        url: "https://toyhou.se/Kaelunyx"
+
+      - name: "YouTube"
+        url: "https://youtube.com/@Kaelunyx"
+
+- category: "Or Email Me"
+  links:
+      - name: "Email"
+        url: "mailto:guilherls@proton.me"

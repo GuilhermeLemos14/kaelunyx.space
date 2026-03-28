@@ -8,108 +8,19 @@ json-ld:
     type: ContactPage
 ---
 
-<!-- sprite.svg assets location src -->
-{% assign sprite_src = "/assets/sprite.svg" %}
-
 <header>
 	<h1>Contact</h1>
 	<p>Feel free to reach out to me through any of the platforms below:</p>
 </header>
 <main>
 	<nav id="contact-links">
+		{% for category in site.data.socials %}
 		<div class="container-contact">
-			<h2>My Socials</h2>
-			<a
-				href="https://discord.com/users/1130534537290592367"
-				class="contact-link transition"
-				aria-label="Discord"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#discord"></use>
-				</svg>
-				<span class="hover-contact">Discord</span>
-			</a>
-			<a
-				href="https://github.com/GuilhermeLemos14"
-				class="contact-link transition"
-				aria-label="GitHub"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#github"></use>
-				</svg>
-				<span class="hover-contact">GitHub</span>
-			</a>
-			<a
-				href="https://instagram.com/kaelunyx"
-				class="contact-link transition"
-				aria-label="Instagram"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#instagram"></use>
-				</svg>
-				<span class="hover-contact">Instagram</span>
-			</a>
-			<a
-				href="https://en.pronouns.page/u/kaelunyx"
-				class="contact-link transition"
-				aria-label="Pronouns"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#pronouns"></use>
-				</svg>
-				<span class="hover-contact">Pronouns</span>
-			</a>
-			<a
-				href="https://reddit.com/u/CommandLs"
-				class="contact-link transition"
-				aria-label="Reddit"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#reddit"></use>
-				</svg>
-				<span class="hover-contact">Reddit</span>
-			</a>
-			<a
-				href="https://toyhou.se/Kaelunyx"
-				class="contact-link transition"
-				aria-label="Toyhouse"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#toyhouse"></use>
-				</svg>
-				<span class="hover-contact">Toyhouse</span>
-			</a>
-			<a
-				href="https://youtube.com/@Kaelunyx"
-				class="contact-link transition"
-				aria-label="YouTube"
-				target="_blank"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#youtube"></use>
-				</svg>
-				<span class="hover-contact">YouTube</span>
-			</a>
+			<h2>{{ category.category }}</h2>
+			{% for link in category.links %} {% include contact_link.html
+			href=link.url platform=link.name %} {% endfor %}
 		</div>
-		<div class="container-contact">
-			<h2>Or Email Me</h2>
-			<a
-				href="mailto:guilherls@proton.me"
-				class="contact-link transition"
-				aria-label="Email"
-				rel="external noopener noreferrer">
-				<svg aria-hidden="true" class="icon">
-					<use href="{{ sprite_src }}#email"></use>
-				</svg>
-				<span class="hover-contact">Email</span>
-			</a>
-		</div>
+		{% endfor %}
 	</nav>
 	<a href="/" class="page-link">Back to Home</a>
 </main>

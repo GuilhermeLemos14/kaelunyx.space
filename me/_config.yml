@@ -10,5 +10,7 @@ exclude:
     - README.md
     - _site
 
-ano: 2026
-autor: Guilherme Lemos
+plugins:
+    - jekyll-titleize
+
+author: Guilherme Lemos
