@@ -23,8 +23,7 @@
 	transition:
 		transform 300ms ease-in-out,
 		box-shadow 300ms ease-in-out;
-	border: 2px solid
-		color-mix(in srgb, var(--bg-secondary) 90%, var(--text-primary));
+	border: 2px solid color-mix(in srgb, var(--bg-secondary) 90%, var(--text-primary));
 }
 
 .community:hover,
@@ -95,7 +94,7 @@
 	margin-right: 8px;
 }
 
-.community > .platforms {
+.community>.platforms {
 	position: absolute;
 	bottom: 8px;
 	right: 12px;
@@ -107,13 +106,13 @@
 	flex-direction: column;
 }
 
-.community > .platforms > .platform {
+.community>.platforms>.platform {
 	display: flex;
 	align-items: center;
 	margin-bottom: 4px;
 }
 
-.community > .platform {
+.community>.platform {
 	position: absolute;
 	bottom: 8px;
 	right: 12px;
@@ -198,4 +197,18 @@
 .main-footer p {
 	margin: 0;
 	margin-block-end: 16px;
+}
+
+@media (max-width: 550px) {
+	main {
+		padding: 4vw;
+	}
+
+	.community-urls {
+		flex-direction: column;
+	}
+
+	.community-urls .join-button {
+		width: 50%;
+	}
 }

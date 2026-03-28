@@ -17,7 +17,7 @@
 				"description": "{{ page.description | escape }}",
 				"publisher": {
 					"@type": "Person",
-					"name": "{{ site.autor }}"
+					"name": "{{ site.author }}"
 				},
 				"inLanguage": "en-CA"
 			}
@@ -27,7 +27,7 @@
 	</head>
 	<body>
 		{% include header.html title=page.header.title
-		subtitle=page.header.subtitle %}
+		subtitle=page.header.subtitle nonav=page.nonav %}
 		<main>{{ content }}</main>
 		{% include footer.html author=site.author %}
 	</body>

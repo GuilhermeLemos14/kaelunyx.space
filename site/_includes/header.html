@@ -1,6 +1,7 @@
 <header>
 	<h1>{{ include.title }}</h1>
 	<p>{{ include.subtitle }}</p>
+	{% if include.nonav != true %}
 	<div id="nav-wrapper">
 		<nav aria-label="Main navigation">
 			<ul>
@@ -24,4 +25,5 @@
 			</ul>
 		</nav>
 	</div>
+	{% endif %}
 </header>

@@ -1,6 +1,6 @@
 {
 	"name": "me.kaelunyx.space",
-	"version": "7.3.0",
+	"version": "7.3.1",
 	"description": "My website. Have a look.",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
