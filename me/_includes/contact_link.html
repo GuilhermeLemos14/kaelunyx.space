@@ -4,11 +4,13 @@
 <a
 	href="{{ include.href }}"
 	class="contact-link transition"
-	aria-label="{{ include.platform | titleize }}"
+	aria-labelledby="{{ include.platform | downcase }}"
 	target="_blank"
 	rel="external noopener noreferrer">
 	<svg aria-hidden="true" class="icon">
 		<use href="{{ sprite_src }}#{{ include.platform | downcase }}"></use>
 	</svg>
-	<span class="hover-contact">{{ include.platform | titleize }}</span>
+	<span id="{{ include.platform | downcase }}" class="hover-contact"
+		>{{ include.platform | titleize }}</span
+	>
 </a>
