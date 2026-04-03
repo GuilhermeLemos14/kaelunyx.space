@@ -1,9 +1,10 @@
 ---
 layout: default
 title: About — Me Kaelunyx Space
-description: Kaelunyx — artist, fullstack web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.
+description: Kaelunyx — artist, frontend web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.
 url: https://kaelunyx.space/about/
 style: about.css
+script: about.js
 json-ld:
     type: AboutPage
 ---
@@ -27,7 +28,10 @@ json-ld:
 			Hi, my name is Guilherme Lemos, known online as
 			<abbr title="Kaelunyx Sylen Rivenheart">Kaelunyx</abbr>.
 		</p>
-		<p>I'm 1X years old and the developer of this entire website lol</p>
+		<p>
+			I'm <span id="kae-age">...</span> years old and the developer of
+			this entire website lol
+		</p>
 		<p>
 			I live in Brazil, more specifically in the Northeast region. I dream
 			of living in Canada one day.
@@ -41,7 +45,7 @@ json-ld:
 		</p>
 		<div class="iframe-wrapper">
 			<iframe
-			class="spotify"
+				class="spotify"
 				title="My Alarm"
 				src="https://open.spotify.com/embed/track/0tKVPaVz1PzHUXafgfvm35?utm_source=generator"
 				width="100%"
@@ -63,7 +67,7 @@ json-ld:
 		</p>
 		<div class="iframe-wrapper">
 			<iframe
-			class="spotify"
+				class="spotify"
 				title="My Playlist"
 				data-testid="embed-iframe"
 				src="https://open.spotify.com/embed/playlist/7EnCtSq49rv88eZsTkZVOm?utm_source=generator"
