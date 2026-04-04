@@ -17,6 +17,10 @@
 			"path": "discord",
 		},
 		{
+			"name": "fbbr.kaelunyx.space",
+			"path": "fbbr",
+		},
+		{
 			"name": "me.kaelunyx.space",
 			"path": "me",
 		},
@@ -32,6 +36,7 @@
 	"settings": {
 		"cSpell.words": [
 			"evenodd",
+			"fbbr",
 			"guilherme",
 			"kaelunyx",
 			"lemos",
@@ -54,5 +59,20 @@
 		"liveServer.settings.file": "404.html",
 		"liveServer.settings.multiRootWorkspaceName": "kaelunyx.space",
 		"liveServer.settings.root": "/_site",
+	},
+	"extensions": {
+		"recommendations": ["astro-build.astro-vscode"],
+		"unwantedRecommendations": [],
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"command": "./node_modules/.bin/astro dev",
+				"name": "Astro Development server",
+				"request": "launch",
+				"type": "node-terminal",
+			},
+		],
 	},
 }
