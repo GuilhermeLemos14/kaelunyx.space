@@ -17,10 +17,6 @@
 			"path": "discord",
 		},
 		{
-			"name": "fbbr.kaelunyx.space",
-			"path": "fbbr",
-		},
-		{
 			"name": "me.kaelunyx.space",
 			"path": "me",
 		},
@@ -36,7 +32,6 @@
 	"settings": {
 		"cSpell.words": [
 			"evenodd",
-			"fbbr",
 			"guilherme",
 			"kaelunyx",
 			"lemos",
