@@ -6,4 +6,5 @@ _site/
 .bundle/
 vendor/
 # formatter config files
+.hintrc
 .htmlhintrc
