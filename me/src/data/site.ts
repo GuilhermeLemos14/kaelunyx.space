@@ -2,7 +2,7 @@ const site: {
     url: string;
     author: string;
 } = {
-    url: 'https://kaelunyx.space',
+    url: 'https://me.kaelunyx.space/',
     author: 'Guilherme Lemos'
 };
 

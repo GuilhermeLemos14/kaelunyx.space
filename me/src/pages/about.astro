@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import calculateAge from "../utils/age.ts";
-import { moreAbout, pronouns, languages } from "../data/about.ts";
 import PronounsLink from "../components/PronounsLink.astro";
+import { moreAbout, pronouns, languages } from "../data/about.ts";
+import calculateAge from "../utils/age.ts";
 
 import "../styles/style.css";
 import "../styles/pages/about.css";
@@ -10,7 +10,7 @@ import "../styles/pages/about.css";
 const title = "About — Me Kaelunyx Space";
 const description =
 	"Kaelunyx — artist, frontend web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
-const url = "https://kaelunyx.space/about/";
+const url = "about";
 const jsonLd = { type: "AboutPage" };
 ---
 

@@ -1,14 +1,5 @@
 ---
-// from /public to avoid bundling issues with Astro
-const flagsResponse = await fetch(
-	"https://kaelunyx.space/communities/flags.json",
-);
-const flags = await flagsResponse.json();
-
-const communitiesResponse = await fetch(
-	"https://kaelunyx.space/communities/communities.json",
-);
-const communities = await communitiesResponse.json();
+import communities, { flags } from "../data/communities";
 
 const spritePath = "/sprite.svg";
 ---
@@ -23,7 +14,7 @@ const spritePath = "/sprite.svg";
 				platform?: string | string[];
 				name: string;
 				description: string;
-				url: string | string[];
+				url: string | { [key: string]: string };
 			}) => (
 				<article class="community" id={community.id}>
 					<span
@@ -121,13 +112,15 @@ const spritePath = "/sprite.svg";
 							</div>
 						</>
 					) : (
-						<a
-							href={community.url}
-							class="join-button"
-							rel="external noopener noreferrer"
-							target="_blank">
-							Join the Community
-						</a>
+						typeof community.url === "string" && (
+							<a
+								href={community.url}
+								class="join-button"
+								rel="external noopener noreferrer"
+								target="_blank">
+								Join the Community
+							</a>
+						)
 					)}
 				</article>
 			),

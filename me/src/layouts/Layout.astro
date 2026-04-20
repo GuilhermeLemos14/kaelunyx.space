@@ -3,19 +3,27 @@ import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
 import ToggleStars from "../components/ToggleStars.astro";
 import Stars from "../components/Stars.astro";
-import site from "../data/site.ts";
+import siteUrl from "../utils/siteUrl.ts";
 
 export interface Props {
 	title: string;
 	description: string;
-	url: string;
+	url?: string;
 	noindex?: boolean;
 	jsonLd?: {
 		type: string;
 	};
 }
 
-const { title, description, url, noindex = false, jsonLd } = Astro.props;
+const {
+	title,
+	description,
+	url: _url = "",
+	noindex = false,
+	jsonLd,
+} = Astro.props;
+
+const url = siteUrl(_url);
 ---
 
 <!doctype html>
@@ -27,7 +35,7 @@ const { title, description, url, noindex = false, jsonLd } = Astro.props;
 		<ToggleStars />
 		<div id="wrapper">
 			<slot />
-			<Footer author={site.author} />
+			<Footer />
 		</div>
 		<Stars />
 	</body>

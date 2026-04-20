@@ -3,6 +3,8 @@ import "../styles/vars.css";
 import "../styles/reset.css";
 import "../styles/accessibility.css";
 
+import site from "../data/site.ts";
+
 export interface Props {
 	title: string;
 	description: string;
@@ -30,7 +32,7 @@ const {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {noindex && <meta name="robots" content="noindex" />}
 <meta name="description" content={description} />
-<link rel="canonical" href="https://kaelunyx.space/" />
+<link rel="canonical" href={site.url} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -57,7 +59,7 @@ const {
 		"@context": "https://schema.org",
 		"@type": jsonLd.type,
 		name: "Kaelunyx Space",
-		url: "https://kaelunyx.space/",
+		url: site.url,
 		description: description,
 		publisher: {
 			"@type": "Person",

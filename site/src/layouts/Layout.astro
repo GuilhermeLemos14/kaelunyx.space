@@ -3,16 +3,14 @@ import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Webrings from "../components/Webrings.astro";
-import site from "../data/site.ts";
+
+import siteUrl from "../utils/siteUrl.ts";
 
 export interface Props {
 	title: string;
 	description: string;
-	url: string;
-	script?: string;
+	url?: string;
 	noindex?: boolean;
-	nostyle?: boolean;
-	noscript?: boolean;
 	jsonLd?: {
 		type: string;
 	};
@@ -27,20 +25,21 @@ export interface Props {
 const {
 	title,
 	description,
-	url,
-	script,
+	url: _url = "",
 	jsonLd,
 	header,
 	noindex = false,
 	webrings,
 	nonav,
 } = Astro.props;
+
+const url = siteUrl(_url);
 ---
 
 <!doctype html>
 <html lang="en-CA">
 	<head>
-		<Head {title} {description} {url} {noindex} {script} {jsonLd} />
+		<Head {title} {description} {url} {noindex} {jsonLd} />
 		{webrings && <Webrings />}
 	</head>
 	<body>
@@ -56,6 +55,6 @@ const {
 		<main>
 			<slot />
 		</main>
-		<Footer author={site.author} />
+		<Footer />
 	</body>
 </html>

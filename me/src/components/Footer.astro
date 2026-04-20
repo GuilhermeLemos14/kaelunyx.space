@@ -1,9 +1,5 @@
 ---
-export interface Props {
-	author: string;
-}
-
-const { author } = Astro.props;
+import site from "../data/site.ts";
 ---
 
 <footer>
@@ -11,6 +7,6 @@ const { author } = Astro.props;
 	<p>Keep wandering...</p>
 	<p class="copyright">
 		© {new Date().getFullYear()}
-		{author}. All rights reserved.
+		{site.author}. All rights reserved.
 	</p>
 </footer>
