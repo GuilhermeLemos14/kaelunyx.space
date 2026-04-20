@@ -1,18 +1,21 @@
 ---
+// /src/components/Head.astro
+import { Seo } from "astro-seo-meta";
+import site from "@/data/site.ts";
+
+import { socialsJsonLd } from "@/data/socials.ts";
+
 import "@/styles/vars.css";
 import "@/styles/reset.css";
 import "@/styles/accessibility.css";
-
-import site from "@/data/site.ts";
 
 export interface Props {
 	title: string;
 	description: string;
 	url: string;
 	noindex?: boolean;
-	jsonLd?: {
-		type: string;
-	};
+	image?: string;
+	imageAlt?: string;
 }
 
 const {
@@ -20,56 +23,76 @@ const {
 	description,
 	url,
 	noindex = false,
-	jsonLd = {
-		type: "WebSite",
-	},
+	image = "/thumbnail.png",
+	imageAlt = "Black dog with snow on its snout in a snowy landscape, with the text 'Kaelunyx Space' on the left.",
 } = Astro.props;
+
+const locale = "en_CA";
+const authorName = site.author;
+const siteName = "Kaelunyx Space";
+const twitterSite = "@Kaelunyx";
 ---
 
 <meta charset="UTF-8" />
-<meta name="theme-color" content="#98949c" />
-<meta name="color-scheme" content="dark" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{noindex && <meta name="robots" content="noindex" />}
-<meta name="description" content={description} />
-<link rel="canonical" href={site.url} />
-<meta property="og:type" content="website" />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content="/thumbnail.png" />
+<Seo
+	{title}
+	{description}
+	icon={image}
+	themeColor="#98949c"
+	colorScheme="dark"
+	facebook={{
+		url,
+		image,
+		type: "website",
+	}}
+	twitter={{
+		card: "summary_large_image",
+		image,
+		site: twitterSite,
+	}}
+	robots={noindex ? "noindex, nofollow" : undefined}
+/>
+<meta name="author" content={authorName} />
+<link rel="canonical" href={url} />
+<meta property="og:locale" content={locale} />
+<meta property="og:site_name" content={siteName} />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta
-	property="og:image:alt"
-	content="Black dog with snow on its snout in a snowy landscape, with the text 'Kaelunyx Space' on the left."
-/>
-<meta property="og:url" content={url} />
-<meta property="og:site_name" content="Kaelunyx" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content="/thumbnail.png" />
-<title>{title}</title>
-<link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<meta property="og:image:alt" content={imageAlt} />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+<!-- <link rel="manifest" href="/site.webmanifest" /> -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<script
-	type="application/ld+json"
-	set:html={JSON.stringify({
-		"@context": "https://schema.org",
-		"@type": jsonLd.type,
-		name: "Me Kaelunyx Space",
-		url: site.url,
-		description: description,
-		publisher: {
-			"@type": "Person",
-			name: "Guilherme Lemos",
-		},
-		inLanguage: "en-CA",
-	})}
-/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
 	href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap"
 	rel="stylesheet"
+/>
+
+<script
+	type="application/ld+json"
+	set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "ProfilePage",
+		inLanguage: "en-CA",
+		dateCreated: site.dateCreated,
+		dateModified: new Date().toISOString().split("T")[0],
+		mainEntity: {
+			"@type": "Person",
+			"@id": `${site.url}/#person`,
+			name: authorName,
+			alternateName: "Kaelunyx",
+			description: description,
+			image: `${site.url}/profile.png`,
+			sameAs: socialsJsonLd,
+			url: site.url,
+			knowsLanguage: ["pt-BR", "en-CA"],
+		},
+	})}
 />
