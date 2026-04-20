@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+main {
+	h2 {
+		color: var(--text-primary);
+		font-size: 1.8rem;
+		margin-block: 1.5rem 1rem;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	a {
+		background-color: var(--bg-secondary);
+		color: var(--accent);
+		border: 1px solid var(--border);
+		outline: 1px solid transparent;
+		border-radius: 8px;
+		cursor: pointer;
+		display: block;
+		font-size: 1.1rem;
+		font-weight: 500;
+		padding: 1.5rem;
+		transition: all 300ms ease-in-out;
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--bg-secondary);
+			border-color: var(--accent);
+			box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+			transition: all 300ms ease-in-out;
+			outline-color: var(--accent);
+		}
+	}
+
+	a .description,
+	li .pages {
+		color: var(--text-secondary);
+		font-size: 0.9rem;
+		opacity: 0;
+		max-height: 0;
+		margin: 0;
+		transition: all 300ms ease-in-out 120ms;
+		transform: translateY(-12px);
+		visibility: hidden;
+	}
+
+	a:hover .description,
+	a:focus-visible .description,
+	li:has(a:hover) .pages,
+	li:has(a:focus-visible) .pages,
+	li:has(.pages a:hover)>a .description,
+	li:has(.pages a:focus-visible)>a .description {
+		display: block;
+		opacity: 1;
+		max-height: 1000px;
+		margin-block-start: 12px;
+		transform: translateY(0px);
+		visibility: visible;
+	}
+}
+
+#pages {
+	a {
+		margin-block: 1rem;
+	}
+
+	a .description,
+	li .pages {
+		padding-inline: 4px;
+	}
+
+	>li {
+
+		&:hover>ul,
+		&:focus-visible>ul {
+			margin-block-start: 4px;
+
+			>li {
+				margin-block: 12px;
+			}
+		}
+
+		>ul {
+			margin-inline-start: 20px;
+
+			>li a {
+				color: var(--accent);
+				font-size: 1rem;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+#other {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	main {
+		a {
+			background-color: var(--bg-secondary);
+			color: var(--accent);
+			border: 1px solid var(--border);
+			outline: 1px solid transparent;
+			border-radius: 8px;
+			cursor: pointer;
+			display: block;
+			font-size: 1.1rem;
+			font-weight: 500;
+			padding: 1.5rem;
+			transition: all 100ms ease-in-out;
+			text-decoration: none;
+
+			&:hover,
+			&:focus-visible {
+				background-color: var(--bg-secondary);
+				border-color: var(--accent);
+				box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+				transition: all 100ms ease-in-out;
+				outline-color: var(--accent);
+			}
+		}
+
+		a .description,
+		li .pages {
+			opacity: 1;
+			visibility: visible;
+			transition: none;
+			max-height: 1000px;
+			margin-block-start: 12px;
+			transform: none;
+		}
+	}
+
+	#pages>li>ul {
+		margin-block-start: 4px;
+
+		>li {
+			margin-block: 12px;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactLink from "../components/ContactLink.astro";
+import { socials } from "../data/socials.ts";
+
+import "../styles/style.css";
+import "../styles/pages/contact.css";
+
+const title = "Contact — Me Kaelunyx Space";
+const description =
+	"Kaelunyx — artist, developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
+const url = "https://me.kaelunyx.space/contact/";
+const jsonLd = { type: "ContactPage" };
+---
+
+<Layout {title} {description} {url} {jsonLd}>
+	<header>
+		<h1>Contact</h1>
+		<p>Feel free to reach out to me through any of the platforms below:</p>
+	</header>
+	<main>
+		<nav id="contact-links">
+			{
+				socials.map((category) => (
+					<div class="container-contact">
+						<h2>{category.category}</h2>
+						{category.links.map((link) => (
+							<ContactLink href={link.url} platform={link.name} />
+						))}
+					</div>
+				))
+			}
+		</nav>
+		<a href="/" class="page-link">Back to Home</a>
+	</main>
+</Layout>

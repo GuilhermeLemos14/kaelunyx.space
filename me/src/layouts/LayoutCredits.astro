@@ -1,0 +1,26 @@
+---
+import Head from "../components/Head.astro";
+// import site from "../data/site.ts";
+
+export interface Props {
+	title: string;
+	description: string;
+	url: string;
+	noindex?: boolean;
+	jsonLd?: {
+		type: string;
+	};
+}
+
+const { title, description, url, noindex = false, jsonLd } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-CA">
+	<head>
+		<Head {title} {description} {url} {noindex} {jsonLd} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

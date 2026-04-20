@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+footer {
+	background: linear-gradient(to bottom, #555, #a8a8a8);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-align: center;
+	border-block-start: var(--border);
+	padding-block: 2rem;
+
+	p {
+		text-align: center;
+		margin-block: 8px;
+	}
+
+	.copyright {
+		margin-block-start: 16px;
+		font-weight: 600;
+	}
+}

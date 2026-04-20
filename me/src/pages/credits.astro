@@ -1,0 +1,20 @@
+---
+import LayoutCredits from "../layouts/LayoutCredits.astro";
+
+import "../styles/style.css";
+import "../styles/pages/credits.css";
+
+const title = "Credits — Me Kaelunyx Space";
+const description =
+	"Credits page is currently under construction. Please check back later for updates.";
+// "Acknowledging the talented individuals and resources that contributed to the creation of Kaelunyx Space, a personal universe of art and code.";
+const url = "https://me.kaelunyx.space/credits/";
+const noindex = true;
+---
+
+<LayoutCredits {title} {description} {url} {noindex}>
+	<div>
+		<p>There's nothing here yet</p>
+		<a href="/" class="page-link">Back to Home</a>
+	</div>
+</LayoutCredits>

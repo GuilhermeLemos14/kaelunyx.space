@@ -1,5 +1,5 @@
 {
-  "name": "me.kaelunyx.space",
+  "name": "kaelunyx.space",
   "type": "module",
   "version": "8.0.0",
   "engines": {
@@ -12,7 +12,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.6",
-    "sass": "^1.99.0"
+    "astro": "^6.1.5"
   }
 }

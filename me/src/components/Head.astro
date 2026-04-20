@@ -1,0 +1,73 @@
+---
+import "../styles/vars.css";
+import "../styles/reset.css";
+import "../styles/accessibility.css";
+
+export interface Props {
+	title: string;
+	description: string;
+	url: string;
+	noindex?: boolean;
+	jsonLd?: {
+		type: string;
+	};
+}
+
+const {
+	title,
+	description,
+	url,
+	noindex = false,
+	jsonLd = {
+		type: "WebSite",
+	},
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="theme-color" content="#98949c" />
+<meta name="color-scheme" content="dark" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{noindex && <meta name="robots" content="noindex" />}
+<meta name="description" content={description} />
+<link rel="canonical" href="https://me.kaelunyx.space/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content="/thumbnail.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta
+	property="og:image:alt"
+	content="Black dog with snow on its snout in a snowy landscape, with the text 'Kaelunyx Space' on the left."
+/>
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content="Kaelunyx" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content="/thumbnail.png" />
+<title>{title}</title>
+<link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<script
+	type="application/ld+json"
+	set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": jsonLd.type,
+		name: "Me Kaelunyx Space",
+		url: "https://me.kaelunyx.space/",
+		description: description,
+		publisher: {
+			"@type": "Person",
+			name: "Guilherme Lemos",
+		},
+		inLanguage: "en-CA",
+	})}
+/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap"
+	rel="stylesheet"
+/>

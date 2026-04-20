@@ -1,0 +1,13 @@
+---
+import site from "../data/site.ts";
+---
+
+<footer>
+	<p class="copyright">
+		© {
+			// it's not necessary to define a const for this
+			new Date().getFullYear()
+		}
+		{site.author}. All rights reserved.
+	</p>
+</footer>

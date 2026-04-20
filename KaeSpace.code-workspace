@@ -5,24 +5,8 @@
 			"path": ".",
 		},
 		{
-			"name": "art.kaelunyx.space",
-			"path": "art",
-		},
-		{
-			"name": "blog.kaelunyx.space",
-			"path": "blog",
-		},
-		{
-			"name": "discord.kaelunyx.space",
-			"path": "discord",
-		},
-		{
 			"name": "me.kaelunyx.space",
 			"path": "me",
-		},
-		{
-			"name": "portfolio.kaelunyx.space",
-			"path": "portfolio",
 		},
 		{
 			"name": "kaelunyx.space",
@@ -39,6 +23,7 @@
 			"ellx",
 			"elus",
 			"evenodd",
+			"furryring",
 			"fursuit",
 			"guilherme",
 			"kaelunyx",
@@ -49,6 +34,9 @@
 			"nelus",
 			"neurotype",
 			"nonav",
+			"noopener",
+			"noreferrer",
+			"nostyle",
 			"onoken",
 			"rivenhart",
 			"rivenheart",
@@ -72,5 +60,21 @@
 		"liveServer.settings.file": "404.html",
 		"liveServer.settings.multiRootWorkspaceName": "kaelunyx.space",
 		"liveServer.settings.root": "/_site",
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"command": "./node_modules/.bin/astro dev",
+				"cwd": "${workspaceFolder}${pathSeparator}${fileWorkspaceFolderBasename}",
+				"name": "Development server",
+				"request": "launch",
+				"type": "node-terminal",
+			},
+		],
+	},
+	"extensions": {
+		"recommendations": ["astro-build.astro-vscode"],
+		"unwantedRecommendations": [],
 	},
 }

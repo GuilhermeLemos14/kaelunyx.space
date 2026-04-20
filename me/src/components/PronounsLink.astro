@@ -1,0 +1,15 @@
+---
+export interface Props {
+	lang: string;
+	link: string;
+	pronouns: string;
+}
+
+const { lang, link, pronouns } = Astro.props;
+---
+
+<a
+	href={"http://" + lang + ".pronouns.page/" + link}
+	target="_blank"
+	rel="noopener noreferrer">{pronouns}</a
+>

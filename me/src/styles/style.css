@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@import "reset.css";
+@import "footer.css";
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	-webkit-user-select: none;
+	user-select: none;
+	line-height: 1.6;
+	font-family: var(--default-font);
+	font-display: swap;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: var(--body-bg);
+	background-attachment: fixed;
+	min-height: 100vh;
+	min-height: 100dvh;
+	padding: 0;
+	margin: 0;
+}
+
+a.page-link {
+	display: inline-block;
+	padding: 8px 16px;
+	margin-block: 12px;
+	background-color: var(--button-bg);
+	color: var(--button-fg);
+	border-radius: 8px;
+	text-decoration: none;
+	transition: background-color 300ms linear;
+
+	&:hover {
+		background-color: var(--button-bg-hover);
+	}
+}

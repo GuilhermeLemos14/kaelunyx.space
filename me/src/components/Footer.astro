@@ -1,0 +1,16 @@
+---
+export interface Props {
+	author: string;
+}
+
+const { author } = Astro.props;
+---
+
+<footer>
+	<p>My world is dark, but not sad.</p>
+	<p>Keep wandering...</p>
+	<p class="copyright">
+		© {new Date().getFullYear()}
+		{author}. All rights reserved.
+	</p>
+</footer>

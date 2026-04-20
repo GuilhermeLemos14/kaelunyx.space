@@ -1,0 +1,33 @@
+---
+const sprite_src = "/sprite.svg";
+
+export interface Props {
+	href: string;
+	platform: string;
+}
+
+const { href, platform } = Astro.props;
+
+function titleize(str: string): string {
+	// nice function to make the platform names look better
+	return str
+		.toLowerCase()
+		.split(" ")
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(" ");
+}
+---
+
+<a
+	{href}
+	class="contact-link transition"
+	aria-labelledby={platform.toLowerCase()}
+	target="_blank"
+	rel="external noopener noreferrer">
+	<svg aria-hidden="true" class="icon">
+		<use href={sprite_src + "#" + platform.toLowerCase()}></use>
+	</svg>
+	<span id={platform.toLowerCase()} class="hover-contact"
+		>{titleize(platform)}</span
+	>
+</a>

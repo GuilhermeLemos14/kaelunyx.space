@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Communities from "../../components/Communities.astro";
+
+import "../../styles/style.css";
+import "../../styles/pages/communities/index.css";
+
+const title = "Communities — Kaelunyx Space";
+const description = "Some of the communities where Kaelunyx is active.";
+const url = "https://kaelunyx.space/communities/";
+const jsonLd = {
+	type: "WebPage",
+};
+const header = {
+	title: "Communities",
+	subtitle:
+		"Here are some of the communities where I'm active. I love being part of communities, so if you know any that I might like, please let me know!",
+};
+---
+
+<Layout {title} {description} {url} {jsonLd} {header}>
+	<Communities />
+	<div class="main-footer">
+		<p>More communities coming soon!</p>
+		<p>Please let me know if you'd like to see your community here!</p>
+		<a href="/communities/form/" class="form-link">Submit Your Community</a>
+	</div>
+</Layout>

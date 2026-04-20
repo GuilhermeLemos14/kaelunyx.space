@@ -1,0 +1,43 @@
+---
+const { title, subtitle, nonav } = Astro.props;
+---
+
+<header>
+	<h1>{title}</h1>
+	<p>{subtitle}</p>
+	{
+		nonav !== true && (
+			<div id="nav-wrapper">
+				<nav aria-label="Main navigation">
+					<ul>
+						<li>
+							<a href="https://art.kaelunyx.space">Art</a>
+						</li>
+						<li>
+							<a href="https://blog.kaelunyx.space">Blog </a>
+						</li>
+						<li>
+							<a href="https://me.kaelunyx.space">Me</a>
+						</li>
+						<li>
+							<a href="https://portfolio.kaelunyx.space">
+								Portfolio
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="/communities/">Communities</a>
+						</li>
+						<li>
+							<a href="/sitemap/">Sitemap</a>
+						</li>
+						<li>
+							<a href="/webrings/">Webrings</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		)
+	}
+</header>

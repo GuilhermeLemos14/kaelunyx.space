@@ -1,0 +1,61 @@
+---
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Webrings from "../components/Webrings.astro";
+import site from "../data/site.ts";
+
+export interface Props {
+	title: string;
+	description: string;
+	url: string;
+	script?: string;
+	noindex?: boolean;
+	nostyle?: boolean;
+	noscript?: boolean;
+	jsonLd?: {
+		type: string;
+	};
+	header?: {
+		title: string;
+		subtitle: string;
+	};
+	nonav?: boolean;
+	webrings?: boolean;
+}
+
+const {
+	title,
+	description,
+	url,
+	script,
+	jsonLd,
+	header,
+	noindex = false,
+	webrings,
+	nonav,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-CA">
+	<head>
+		<Head {title} {description} {url} {noindex} {script} {jsonLd} />
+		{webrings && <Webrings />}
+	</head>
+	<body>
+		{
+			header && (
+				<Header
+					title={header.title}
+					subtitle={header.subtitle}
+					{nonav}
+				/>
+			)
+		}
+		<main>
+			<slot />
+		</main>
+		<Footer author={site.author} />
+	</body>
+</html>

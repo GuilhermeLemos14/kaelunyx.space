@@ -1,0 +1,165 @@
+---
+// from /public to avoid bundling issues with Astro
+const flagsResponse = await fetch(
+	"https://kaelunyx.space/communities/flags.json",
+);
+const flags = await flagsResponse.json();
+
+const communitiesResponse = await fetch(
+	"https://kaelunyx.space/communities/communities.json",
+);
+const communities = await communitiesResponse.json();
+
+const spritePath = "/sprite.svg";
+---
+
+<section id="communities">
+	{
+		communities.map(
+			(community: {
+				id: string;
+				lang?: string;
+				rep?: string | string[];
+				platform?: string | string[];
+				name: string;
+				description: string;
+				url: string | string[];
+			}) => (
+				<article class="community" id={community.id}>
+					<span
+						class="id"
+						onclick={`copyID('${community.id}')`}
+						title="Copy ID">
+						#{community.id}
+					</span>
+
+					{community.lang && (
+						<div class="language">
+							<span class="flag">
+								{flags[community.lang] || "??"}
+							</span>
+							{community.lang}
+						</div>
+					)}
+
+					{community.rep && (
+						<span class="rep">
+							Rep:{" "}
+							{Array.isArray(community.rep)
+								? community.rep.map((r) => r).join(", ")
+								: community.rep}
+						</span>
+					)}
+
+					{typeof community.platform === "string" && (
+						<div class="platform">
+							<svg
+								aria-hidden="true"
+								class="platform-icon {community.platform.toLowerCase()}">
+								<use
+									href={`${spritePath}#${community.platform.toLowerCase()}`}
+								/>
+							</svg>
+							{community.platform.charAt(0).toUpperCase() +
+								community.platform.slice(1)}
+						</div>
+					)}
+
+					{Array.isArray(community.platform) && (
+						<div class="platforms">
+							{community.platform.map((platform) => (
+								<div class="platform">
+									<svg
+										aria-hidden="true"
+										class="platform-icon {platform.toLowerCase()}">
+										<use
+											href={`${spritePath}#${platform.toLowerCase()}`}
+										/>
+									</svg>
+									{platform.charAt(0).toUpperCase() +
+										platform.slice(1)}
+								</div>
+							))}
+						</div>
+					)}
+
+					<img
+						src={`/communities/icons/${community.id}.webp`}
+						decoding="async"
+						loading="lazy"
+						alt={`${community.name} Icon`}
+						width="80"
+						height="80"
+					/>
+
+					<h2>{community.name}</h2>
+					<p set:html={community.description} />
+
+					{Array.isArray(community.url) ? (
+						<>
+							<strong class="join">Join the Community</strong>
+							<div class="community-urls">
+								{Object.entries(community.url).map(
+									([platform, url]) => (
+										<a
+											class="join-button"
+											href={url}
+											rel="noopener noreferrer"
+											target="_blank">
+											<svg
+												aria-hidden="true"
+												class="platform-icon {platform.toLowerCase()}">
+												<use
+													href={`${spritePath}#${platform.toLowerCase()}`}
+												/>
+											</svg>
+											{platform.charAt(0).toUpperCase() +
+												platform.slice(1)}
+										</a>
+									),
+								)}
+							</div>
+						</>
+					) : (
+						<a
+							href={community.url}
+							class="join-button"
+							rel="external noopener noreferrer"
+							target="_blank">
+							Join the Community
+						</a>
+					)}
+				</article>
+			),
+		)
+	}
+</section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		// Highlight community if hash matches
+		const hash = window.location.hash.slice(1);
+		if (hash) {
+			const community = document.getElementById(hash);
+			if (community) {
+				community.classList.add("target");
+				community.scrollIntoView({ behavior: "smooth" });
+			}
+		}
+	});
+
+	function copyID(id: string) {
+		const fullURL = `${window.location.href}#${id}`;
+		navigator.clipboard.writeText(fullURL).then(() => {
+			const idElement: HTMLElement | null = document.querySelector(
+				`.community#${id} .id`,
+			);
+			if (!idElement) return;
+			const originalText = idElement.textContent;
+			idElement.textContent = "ID Copied!";
+			setTimeout(() => {
+				idElement.textContent = originalText;
+			}, 2000);
+		});
+	}
+</script>
