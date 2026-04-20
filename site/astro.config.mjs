@@ -7,6 +7,14 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@': '/src',
+        '/src': '/src'
+      }
+    }
+  },
   site: 'https://kaelunyx.space',
   integrations: [
     robotsTxt(),

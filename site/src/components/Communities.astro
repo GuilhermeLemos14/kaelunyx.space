@@ -62,7 +62,7 @@ const spritePath = "/sprite.svg";
 								<div class="platform">
 									<svg
 										aria-hidden="true"
-										class="platform-icon {platform.toLowerCase()}">
+										class={`platform-icon ${platform.toLowerCase()}`}>
 										<use
 											href={`${spritePath}#${platform.toLowerCase()}`}
 										/>
@@ -86,7 +86,7 @@ const spritePath = "/sprite.svg";
 					<h2>{community.name}</h2>
 					<p set:html={community.description} />
 
-					{Array.isArray(community.url) ? (
+					{typeof community.url === "object" ? (
 						<>
 							<strong class="join">Join the Community</strong>
 							<div class="community-urls">
@@ -99,7 +99,7 @@ const spritePath = "/sprite.svg";
 											target="_blank">
 											<svg
 												aria-hidden="true"
-												class="platform-icon {platform.toLowerCase()}">
+												class={`platform-icon ${platform.toLowerCase()}`}>
 												<use
 													href={`${spritePath}#${platform.toLowerCase()}`}
 												/>

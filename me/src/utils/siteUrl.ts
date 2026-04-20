@@ -1,4 +1,4 @@
-import site from "../data/site.ts";
+import site from "@/data/site.ts";
 
 function siteUrl(path: string = ""): string {
     if (path === "") {

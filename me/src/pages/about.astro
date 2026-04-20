@@ -1,11 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PronounsLink from "../components/PronounsLink.astro";
-import { moreAbout, pronouns, languages } from "../data/about.ts";
-import calculateAge from "../utils/age.ts";
+import Layout from "@/layouts/Layout.astro";
+import PronounsLink from "@/components/PronounsLink.astro";
 
-import "../styles/style.css";
-import "../styles/pages/about.css";
+import { moreAbout, pronouns, languages } from "@/data/about.ts";
+
+import calculateAge from "@/utils/age.ts";
+
+import "@/styles/style.css";
+import "@/styles/pages/about.css";
 
 const title = "About — Me Kaelunyx Space";
 const description =
@@ -85,10 +87,15 @@ const jsonLd = { type: "AboutPage" };
 			</p>
 			<ul id="pronouns-list">
 				{
-					pronouns.map(({ lang, list }) => {
-						list.map(({ link, pronouns }) => (
-							<PronounsLink {lang} {link} {pronouns} />
-						));
+					pronouns.map(({ name, lang, list }) => {
+						return (
+							<li>
+								<strong>{name}:</strong>
+								{list.map(({ link, pronouns }) => (
+									<PronounsLink {lang} {link} {pronouns} />
+								))}
+							</li>
+						);
 					})
 				}
 			</ul>

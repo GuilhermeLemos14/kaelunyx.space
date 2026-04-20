@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-#webrings {
+@import url("https://furryring.neocities.org/onionring.css");
+
+.widget {
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
@@ -8,7 +10,7 @@
 	max-width: 800px;
 	height: 100%;
 
-	* {
+	:where(*) {
 		all: initial;
 		/* reset */
 	}

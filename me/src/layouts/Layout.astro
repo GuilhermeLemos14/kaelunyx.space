@@ -1,9 +1,8 @@
 ---
-import Head from "../components/Head.astro";
-import Footer from "../components/Footer.astro";
-import ToggleStars from "../components/ToggleStars.astro";
-import Stars from "../components/Stars.astro";
-import siteUrl from "../utils/siteUrl.ts";
+import Head from "@/components/Head.astro";
+import Footer from "@/components/Footer.astro";
+import Stars from "@/components/Stars.astro";
+import siteUrl from "@/utils/siteUrl.ts";
 
 export interface Props {
 	title: string;
@@ -32,11 +31,10 @@ const url = siteUrl(_url);
 		<Head {title} {description} {url} {noindex} {jsonLd} />
 	</head>
 	<body>
-		<ToggleStars />
 		<div id="wrapper">
 			<slot />
 			<Footer />
 		</div>
-		<Stars />
+		<Stars aria-hidden="true" />
 	</body>
 </html>

@@ -1,7 +1,3 @@
----
-import "../scripts/stars.ts";
----
-
 <!doctype html>
 <html lang="en-CA">
 	<head>
@@ -102,11 +98,44 @@ import "../scripts/stars.ts";
 			}
 		</style>
 		<script defer is:inline>
+			const params = new URLSearchParams(location.search);
+			const starsEnabled = params.get("stars") !== "off";
+
 			document.addEventListener("DOMContentLoaded", () => {
 				const siteUrl = document.getElementById("site-url");
 				const defaultUrl = window.location.href;
 				siteUrl.placeholder = defaultUrl;
 				siteUrl.value = defaultUrl;
+
+				if (!starsEnabled) {
+					document
+						.querySelectorAll(".page-link")
+						.forEach((element) => {
+							const url = new URL(
+								element.getAttribute("href") || "",
+							);
+							url.searchParams.set("stars", "off");
+							element.setAttribute("href", url.toString());
+						});
+					document.querySelectorAll(".stars").forEach((star) => {
+						star.remove();
+					});
+				}
+
+				const toggleButton = document.getElementById(
+					"toggle-stars-button",
+				);
+				if (toggleButton) {
+					toggleButton.addEventListener("click", () => {
+						const currentUrl = new URL(window.location.href);
+						if (currentUrl.searchParams.get("stars") === "off") {
+							currentUrl.searchParams.delete("stars");
+						} else {
+							currentUrl.searchParams.set("stars", "off");
+						}
+						window.location.href = currentUrl.toString();
+					});
+				}
 			});
 		</script>
 	</head>

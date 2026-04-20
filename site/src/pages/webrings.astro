@@ -1,8 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 
-import "../styles/style.css";
-import "../styles/pages/webrings.css";
+import WebringsComp from "@/components/WebringsComp.astro";
+
+import "@/styles/style.css";
+import "@/styles/pages/webrings.css";
 
 const title = "Webrings — Kaelunyx Space";
 const description = "A collection of webrings that I'm part of.";
@@ -13,20 +15,19 @@ const header = {
 		"A collection of webrings that I'm part of. I love being part of communities, so if you know any webrings that I might like, please let me know!",
 };
 const noindex = true;
-const webrings = true;
 ---
 
-<Layout {title} {description} {url} {header} {noindex} {webrings}>
-	<div id="webrings">
-		<div id="furryring">
-			<script
-				type="text/javascript"
-				src="https://furryring.neocities.org/onionring-variables.js"
-			></script>
-			<script
-				type="text/javascript"
-				src="https://furryring.neocities.org/onionring-widget.js"
-			></script>
-		</div>
-	</div>
+<Layout {title} {description} {url} {header} {noindex}>
+	<WebringsComp />
+	<script is:inline defer>
+		document.addEventListener("DOMContentLoaded", () => {
+			const widget = document.querySelector("#onionring-widget");
+			if (!widget) return;
+
+			Array.from(widget.getElementsByTagName("a")).forEach((link) => {
+				link.target = "_blank";
+				link.style.cursor = "pointer";
+			});
+		});
+	</script>
 </Layout>
