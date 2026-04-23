@@ -4,5 +4,5 @@ export default {
     name: "Me Kaelunyx Space",
     author: "Guilherme Lemos",
     twitterHandle: "@Kaelunyx",
-    dateCreated: "2025-01-11",
+    dateCreated: "2025-01-12T00:00:00-03:00",
 };

@@ -10,9 +10,6 @@ export interface Props {
 	description: string;
 	url?: string;
 	noindex?: boolean;
-	jsonLd?: {
-		type: string;
-	};
 	header?: {
 		title: string;
 		subtitle: string;
@@ -24,7 +21,6 @@ const {
 	title,
 	description,
 	url: _url = "",
-	jsonLd,
 	header,
 	noindex = false,
 	nonav,
@@ -36,7 +32,7 @@ const url = siteUrl(_url);
 <!doctype html>
 <html lang="en-CA">
 	<head>
-		<Head {title} {description} {url} {noindex} {jsonLd} />
+		<Head {title} {description} {url} {noindex} />
 	</head>
 	<body>
 		{

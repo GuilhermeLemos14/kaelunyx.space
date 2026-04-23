@@ -7,18 +7,15 @@ export interface Props {
 	description: string;
 	url: string;
 	noindex?: boolean;
-	jsonLd?: {
-		type: string;
-	};
 }
 
-const { title, description, url, noindex = false, jsonLd } = Astro.props;
+const { title, description, url, noindex = false } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-CA">
 	<head>
-		<Head {title} {description} {url} {noindex} {jsonLd} />
+		<Head {title} {description} {url} {noindex} />
 	</head>
 	<body>
 		<slot />

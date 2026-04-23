@@ -76,13 +76,14 @@ const twitterSite = "@Kaelunyx";
 />
 
 <script
+	is:inline
 	type="application/ld+json"
 	set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "ProfilePage",
 		inLanguage: "en-CA",
 		dateCreated: site.dateCreated,
-		dateModified: new Date().toISOString().split("T")[0],
+		dateModified: new Date().toISOString(),
 		mainEntity: {
 			"@type": "Person",
 			"@id": `${site.url}/#person`,

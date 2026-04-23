@@ -8,9 +8,6 @@ const title = "Kaelunyx — Submit Community";
 const description =
 	"Submit your community to be featured on Kaelunyx's website.";
 const url = "communities/form";
-const jsonLd = {
-	type: "WebPage",
-};
 const header = {
 	title: "Submit Your Community",
 	subtitle:
@@ -18,7 +15,7 @@ const header = {
 };
 ---
 
-<Layout {title} {description} {url} {jsonLd} {header}>
+<Layout {title} {description} {url} {header}>
 	<form action="https://formspree.io/f/xbdarzbp" method="post">
 		<label for="rep">Community Representative:</label>
 		<input
