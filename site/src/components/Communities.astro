@@ -37,7 +37,12 @@ const spritePath = "/sprite.svg";
 						<span class="rep">
 							Rep:{" "}
 							{Array.isArray(community.rep)
-								? community.rep.map((r) => r).join(", ")
+								? community.rep.map((r, idx) => (
+										<>
+											{idx > 0 && <br />}
+											{r}
+										</>
+									))
 								: community.rep}
 						</span>
 					)}

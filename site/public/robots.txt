@@ -1,0 +1,1 @@
+User-agent: *\nAllow: /\nSitemap: https://kaelunyx.space/sitemap-index.xml

@@ -23,7 +23,8 @@
 	transition:
 		transform 300ms ease-in-out,
 		box-shadow 300ms ease-in-out;
-	border: 2px solid color-mix(in srgb, var(--bg-secondary) 90%, var(--text-primary));
+	border: 2px solid
+		color-mix(in srgb, var(--bg-secondary) 90%, var(--text-primary));
 
 	&:hover,
 	&:has(.join-button:focus-visible) {
@@ -64,6 +65,7 @@
 		right: 8px;
 		font-size: 0.8rem;
 		font-weight: bold;
+		text-align: right;
 		color: #ccc;
 	}
 
@@ -82,7 +84,7 @@
 		}
 	}
 
-	>.platforms {
+	> .platforms {
 		position: absolute;
 		bottom: 8px;
 		right: 12px;
@@ -93,14 +95,14 @@
 		justify-content: center;
 		flex-direction: column;
 
-		>.platform {
+		> .platform {
 			display: flex;
 			align-items: center;
 			margin-bottom: 4px;
 		}
 	}
 
-	>.platform {
+	> .platform {
 		position: absolute;
 		bottom: 8px;
 		right: 12px;
