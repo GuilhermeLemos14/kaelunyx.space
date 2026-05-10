@@ -5,26 +5,21 @@ const backStars = Array.from({ length: 40 });
 const frontStars = Array.from({ length: 10 });
 ---
 
-<noscript>
-	<style is:inline aria-hidden="true">
-		.stars,
-		#toggle-stars-btn {
-			display: none;
-		}
-	</style>
-</noscript>
-
 <button
 	id="toggle-stars-btn"
-	class="custom-btn px-3 py-2 fixed top-4 right-4 z-20 motion-reduce:hidden"
+	class="custom-btn px-3 py-2 fixed top-4 right-4 z-20 motion-reduce:hidden noscript:hidden"
 	aria-hidden="true">Toggle Stars</button
 >
 
-<div class="stars stars--back motion-reduce:hidden" aria-hidden="true">
+<div
+	class="stars stars--back motion-reduce:hidden noscript:hidden"
+	aria-hidden="true">
 	{backStars.map(() => <div class="star" />)}
 </div>
 
-<div class="stars stars--front motion-reduce:hidden" aria-hidden="true">
+<div
+	class="stars stars--front motion-reduce:hidden noscript:hidden"
+	aria-hidden="true">
 	{frontStars.map(() => <div class="star" />)}
 </div>
 

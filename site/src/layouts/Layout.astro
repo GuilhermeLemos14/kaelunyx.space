@@ -2,6 +2,7 @@
 import Head from "@/components/Head.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Neko from "@/components/Neko.astro";
 
 import siteUrl from "@/utils/siteUrl.ts";
 
@@ -37,6 +38,7 @@ const url = siteUrl(_url);
 		<Head {title} {description} {url} {noindex} />
 	</head>
 	<body>
+		<Neko aria-hidden="true" />
 		{
 			header && (
 				<Header

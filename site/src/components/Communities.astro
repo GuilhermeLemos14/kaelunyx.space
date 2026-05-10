@@ -80,7 +80,7 @@ const spritePath = "/sprite.svg";
 					)}
 
 					<img
-						class="mb-4 rounded-lg"
+						class="mx-auto mb-4 rounded-lg"
 						src={`/communities/icons/${community.id}.webp`}
 						decoding="async"
 						loading="lazy"
@@ -90,7 +90,7 @@ const spritePath = "/sprite.svg";
 					/>
 
 					<h2
-						class="text-xl  text-accent mt-0 mb-3"
+						class="text-xl text-accent mt-0 mb-3"
 						set:html={community.name}
 					/>
 					<p
@@ -129,7 +129,7 @@ const spritePath = "/sprite.svg";
 						typeof community.url === "string" && (
 							<a
 								href={community.url}
-								class="join-button"
+								class="mx-auto max-w-max join-button"
 								rel="external noopener noreferrer"
 								target="_blank">
 								Join the Community
