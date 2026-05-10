@@ -1,9 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import "@/styles/style.css";
-import "@/styles/pages/communities/form.css";
-
 const title = "Kaelunyx — Submit Community";
 const description =
 	"Submit your community to be featured on Kaelunyx's website.";
@@ -16,43 +13,45 @@ const header = {
 ---
 
 <Layout {title} {description} {url} {header}>
-	<form action="https://formspree.io/f/xbdarzbp" method="post">
-		<label for="rep">Community Representative:</label>
-		<input
-			type="text"
-			id="rep"
-			name="rep"
-			placeholder="Your username on your community platform"
-			minlength="3"
-			maxlength="30"
-			required
-		/>
-		<label for="community-name">Community Name:</label>
-		<input
-			type="text"
-			id="community-name"
-			name="community-name"
-			placeholder="My Community"
-			minlength="1"
-			maxlength="100"
-			required
-		/>
-		<label for="community-description">Description:</label>
-		<textarea
-			id="community-description"
-			name="community-description"
-			placeholder="Describe your community and what makes it special"
-			minlength="100"
-			maxlength="400"
-			required></textarea>
-		<label for="community-link">Link to Community:</label>
-		<input
-			type="url"
-			id="community-link"
-			name="community-link"
-			placeholder="https://platform.com/mycommunity"
-			required
-		/>
-		<button type="submit">Submit Community</button>
-	</form>
+	<main>
+		<form action="https://formspree.io/f/xbdarzbp" method="post">
+			<label for="rep">Community Representative:</label>
+			<input
+				type="text"
+				id="rep"
+				name="rep"
+				placeholder="Your username on your community platform"
+				minlength="3"
+				maxlength="30"
+				required
+			/>
+			<label for="community-name">Community Name:</label>
+			<input
+				type="text"
+				id="community-name"
+				name="community-name"
+				placeholder="My Community"
+				minlength="1"
+				maxlength="100"
+				required
+			/>
+			<label for="community-description">Description:</label>
+			<textarea
+				id="community-description"
+				name="community-description"
+				placeholder="Describe your community and what makes it special"
+				minlength="100"
+				maxlength="400"
+				required></textarea>
+			<label for="community-link">Link to Community:</label>
+			<input
+				type="url"
+				id="community-link"
+				name="community-link"
+				placeholder="https://platform.com/mycommunity"
+				required
+			/>
+			<button type="submit">Submit Community</button>
+		</form>
+	</main>
 </Layout>

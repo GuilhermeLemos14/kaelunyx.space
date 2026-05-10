@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@import "../theme.css";
+
+@layer base {
+    main {
+        @apply max-sm:p-[4vw];
+	}
+}
+
+@layer components {
+    .communities {
+        @apply flex flex-col items-center p-5 gap-6;
+    }
+
+    .community {
+        @apply relative flex flex-col bg-secondary-bg border-border rounded-xl p-6 w-full place-items-center text-center scroll-m-4 border-2 border-solid transition-transform duration-300 ease-in-out min-h-max max-w-2xl;
+
+        &:hover,
+        &:has(.join-button:focus-visible) {
+            @apply -translate-y-1 shadow-lg;
+        }
+
+        .attr {
+            @apply absolute text-sm font-bold;
+        }
+
+        .id {
+            @apply top-2 left-2 text-[#ccc] cursor-pointer;
+        }
+
+
+        .rep {
+            @apply top-2 right-2 text-right text-[#ccc];
+        }
+
+        .language {
+            @apply flex bottom-2 left-3 items-center;
+
+            .flag {
+                @apply text-xl mr-2;
+            }
+        }
+
+        > .platforms {
+            @apply flex flex-col bottom-2 right-3 items-start justify-center;
+
+            > .platform {
+                @apply flex items-center mb-1;
+            }
+        }
+
+        > .platform {
+            @apply flex bottom-2 right-3 items-center;
+        }
+
+        .platform-icon {
+            @apply text-primary-fg fill-primary-fg h-4 w-4 mr-2;
+        }
+    }
+
+    /* absolute hell */
+    :not(:has(.community.target)) .community,
+    :not(:has(.community:target)) .community {
+        @apply block;
+    }
+
+    :has(.community.target) .community:not(.target),
+    :has(.community:target) .community:not(:target) {
+        @apply hidden;
+    }
+
+    .join-button,
+    .form-link {
+        @apply block bg-accent text-primary-bg no-underline cursor-pointer font-bold font-default transition-colors duration-300 ease-in-out self-center px-5 py-3 rounded-lg hover:bg-accent-hover;
+
+        &:focus-visible {
+            @apply bg-accent-hover outline-2 outline-solid outline-accent outline-offset-4;
+        }
+    }
+
+    .community-urls {
+        @apply flex flex-row justify-center gap-2 max-sm:flex-col;
+
+        .join-button {
+            @apply flex items-center justify-center max-sm:w-36;
+
+            .platform-icon {
+                @apply text-primary-bg fill-primary-bg h-5 w-5 mr-2;
+            }
+        }
+    }
+
+    .main-footer {
+        @apply flex flex-col text-center items-center mb-6 gap-0;
+
+        p {
+            @apply m-0 mb-4;
+        }
+    }
+}

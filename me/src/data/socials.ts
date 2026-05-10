@@ -41,7 +41,7 @@ export const socials = [
         "links": [
             {
                 "name": "Email",
-                "url": "mailto:guilherls@proton.me"
+                "url": "mailto:contact@kaelunyx.space"
             }
         ]
     }

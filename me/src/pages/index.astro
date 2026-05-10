@@ -1,19 +1,19 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import "../styles/pages/index.css";
-
 const title = "Cosmic Universe of Art and Code — Me Kaelunyx Space";
 const description =
 	"Kaelunyx — artist, developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
 ---
 
-<Layout {title} {description}>
-	<header>
-		<h1>Welcome to Kaelunyx's Space</h1>
+<Layout {title} {description} footerBorder={false}>
+	<header class="self-center p-12 pb-0">
+		<h1 class="text-cosmic-light text-4xl mb-3">
+			Welcome to Kaelunyx's Space
+		</h1>
 	</header>
-	<main>
-		<nav id="link-wrapper">
+	<main class="p-0 my-[5vh] mx-0">
+		<nav class="index-nav">
 			<a href="/about/" class="page-link">About</a>
 			<a href="/contact/" class="page-link">Contact</a>
 			<a href="/credits/" class="page-link">Credits</a>

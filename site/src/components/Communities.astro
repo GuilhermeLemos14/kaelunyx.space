@@ -4,7 +4,7 @@ import communities, { flags } from "@/data/communities";
 const spritePath = "/sprite.svg";
 ---
 
-<section id="communities">
+<section class="communities">
 	{
 		communities.map(
 			(community: {
@@ -18,14 +18,14 @@ const spritePath = "/sprite.svg";
 			}) => (
 				<article class="community" id={community.id}>
 					<span
-						class="id"
+						class="attr id"
 						onclick={`copyID('${community.id}')`}
 						title="Copy ID">
 						#{community.id}
 					</span>
 
 					{community.lang && (
-						<div class="language">
+						<div class="attr language">
 							<span class="flag">
 								{flags[community.lang] || "??"}
 							</span>
@@ -34,7 +34,7 @@ const spritePath = "/sprite.svg";
 					)}
 
 					{community.rep && (
-						<span class="rep">
+						<span class="attr rep">
 							Rep:{" "}
 							{Array.isArray(community.rep)
 								? community.rep.map((r, idx) => (
@@ -48,7 +48,7 @@ const spritePath = "/sprite.svg";
 					)}
 
 					{typeof community.platform === "string" && (
-						<div class="platform">
+						<div class="attr platform">
 							<svg
 								aria-hidden="true"
 								class="platform-icon {community.platform.toLowerCase()}">
@@ -62,7 +62,7 @@ const spritePath = "/sprite.svg";
 					)}
 
 					{Array.isArray(community.platform) && (
-						<div class="platforms">
+						<div class="attr platforms">
 							{community.platform.map((platform) => (
 								<div class="platform">
 									<svg
@@ -80,6 +80,7 @@ const spritePath = "/sprite.svg";
 					)}
 
 					<img
+						class="mb-4 rounded-lg"
 						src={`/communities/icons/${community.id}.webp`}
 						decoding="async"
 						loading="lazy"
@@ -88,12 +89,20 @@ const spritePath = "/sprite.svg";
 						height="80"
 					/>
 
-					<h2>{community.name}</h2>
-					<p set:html={community.description} />
+					<h2
+						class="text-xl  text-accent mt-0 mb-3"
+						set:html={community.name}
+					/>
+					<p
+						class="block text-center mb-4"
+						set:html={community.description}
+					/>
 
 					{typeof community.url === "object" ? (
 						<>
-							<strong class="join">Join the Community</strong>
+							<p class="block text-accent mb-2">
+								<strong>Join the Community</strong>
+							</p>
 							<div class="community-urls">
 								{Object.entries(community.url).map(
 									([platform, url]) => (

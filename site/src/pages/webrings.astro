@@ -3,9 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 
 import WebringsComp from "@/components/WebringsComp.astro";
 
-import "@/styles/style.css";
-import "@/styles/pages/webrings.css";
-
 const title = "Webrings — Kaelunyx Space";
 const description = "A collection of webrings that I'm part of.";
 const url = "webrings";
@@ -18,16 +15,17 @@ const noindex = true;
 ---
 
 <Layout {title} {description} {url} {header} {noindex}>
-	<WebringsComp />
-	<script is:inline defer>
-		document.addEventListener("DOMContentLoaded", () => {
-			const widget = document.querySelector("#onionring-widget");
-			if (!widget) return;
-
-			Array.from(widget.getElementsByTagName("a")).forEach((link) => {
-				link.target = "_blank";
-				link.style.cursor = "pointer";
+	<main>
+		<WebringsComp />
+		<script is:inline defer>
+			document.addEventListener("DOMContentLoaded", () => {
+				const widget = document.querySelector("#onionring-widget");
+				if (!widget) return;
+				Array.from(widget.getElementsByTagName("a")).forEach((link) => {
+					link.target = "_blank";
+					link.style.cursor = "pointer";
+				});
 			});
-		});
-	</script>
+		</script>
+	</main>
 </Layout>

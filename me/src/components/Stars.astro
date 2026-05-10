@@ -14,11 +14,17 @@ const frontStars = Array.from({ length: 10 });
 	</style>
 </noscript>
 
-<button id="toggle-stars-btn" aria-hidden="true">Toggle Stars</button>
-<div class="stars stars--back" aria-hidden="true">
+<button
+	id="toggle-stars-btn"
+	class="custom-btn px-3 py-2 fixed top-4 right-4 z-20 motion-reduce:hidden"
+	aria-hidden="true">Toggle Stars</button
+>
+
+<div class="stars stars--back motion-reduce:hidden" aria-hidden="true">
 	{backStars.map(() => <div class="star" />)}
 </div>
-<div class="stars stars--front" aria-hidden="true">
+
+<div class="stars stars--front motion-reduce:hidden" aria-hidden="true">
 	{frontStars.map(() => <div class="star" />)}
 </div>
 

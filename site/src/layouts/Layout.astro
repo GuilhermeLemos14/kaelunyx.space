@@ -5,6 +5,8 @@ import Footer from "@/components/Footer.astro";
 
 import siteUrl from "@/utils/siteUrl.ts";
 
+import "@/styles/global.css";
+
 export interface Props {
 	title: string;
 	description: string;
@@ -44,9 +46,7 @@ const url = siteUrl(_url);
 				/>
 			)
 		}
-		<main>
-			<slot />
-		</main>
+		<slot />
 		<Footer />
 	</body>
 </html>

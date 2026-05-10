@@ -3,33 +3,39 @@ import Layout from "@/layouts/Layout.astro";
 import ContactLink from "@/components/ContactLink.astro";
 import { socials } from "@/data/socials.ts";
 
-import "@/styles/style.css";
-import "@/styles/pages/contact.css";
-
 const title = "Contact — Me Kaelunyx Space";
 const description =
 	"Kaelunyx — artist, developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
 const url = "contact";
 ---
 
-<Layout {title} {description} {url}>
-	<header>
-		<h1>Contact</h1>
-		<p>Feel free to reach out to me through any of the platforms below:</p>
+<Layout {title} {description} {url} footerBorder={false}>
+	<header class="text-center">
+		<h1 class="text-3xl text-cosmic-adaptive-blue my-5">Contact</h1>
+		<p class="text-muted-fg mb-4 mt-3">
+			Feel free to reach out to me through any of the platforms below:
+		</p>
 	</header>
-	<main>
-		<nav id="contact-links">
+	<main class="flex flex-col items-center text-center">
+		<nav class="flex flex-col flex-wrap justify-center gap-4 p-3">
 			{
 				socials.map((category) => (
-					<div class="container-contact">
-						<h2>{category.category}</h2>
-						{category.links.map((link) => (
-							<ContactLink href={link.url} platform={link.name} />
-						))}
+					<div class="flex flex-col flew-wrap justify-center gap-4">
+						<h2 class="basis-full text-cosmic-adaptive-purple text-xl p-0 m-0">
+							{category.category}
+						</h2>
+						<div class="flex flex-row flex-wrap justify-center gap-4">
+							{category.links.map((link) => (
+								<ContactLink
+									href={link.url}
+									platform={link.name}
+								/>
+							))}
+						</div>
 					</div>
 				))
 			}
 		</nav>
-		<a href="/" class="page-link">Back to Home</a>
+		<a href="/" class="custom-btn page-link mt-2 mb-3">Back to Home</a>
 	</main>
 </Layout>

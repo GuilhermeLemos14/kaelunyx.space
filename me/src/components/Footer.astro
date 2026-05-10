@@ -1,11 +1,25 @@
 ---
-import site from "@/data/site.ts";
+import site from "@/data/site";
+
+export interface Props {
+	border?: boolean;
+	paddingTop?: string;
+}
+
+const { border = true } = Astro.props;
+
+var classes =
+	"bg-linear-to-b from-border to-[#a8a8a8] bg-clip-text text-transparent text-center *:my-2";
+const borderClasses = "border-t border-solid border-border";
+
+// somethings just to fix the classes
+classes = border ? `${classes} ${borderClasses}` : classes;
 ---
 
-<footer>
+<footer class={classes}>
 	<p>My world is dark, but not sad.</p>
 	<p>Keep wandering...</p>
-	<p class="copyright">
+	<p class="mt-4 font-semibold">
 		© {new Date().getFullYear()}
 		{site.author}. All rights reserved.
 	</p>

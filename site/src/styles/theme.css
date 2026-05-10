@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+	--color-primary-bg: #0f0f0f;
+	--color-secondary-bg: #1a1a1a;
+
+	--color-primary-fg: #e0e0e0;
+	--color-secondary-fg: #a0a0a0;
+
+	--color-accent: #7373f2;
+	--color-accent-hover: #9595f4;
+
+	--color-border: #2a2a2a;
+
+	--font-default: "Space Grotesk", sans-serif;
+}

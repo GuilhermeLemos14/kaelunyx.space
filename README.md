@@ -1,7 +1,8 @@
 # kaelunyx.space
 
-Kaelunyx Website. Have fun.
+Kaelunyx Website (My Personal Website).
+Have fun! ^^
 
-## Licence
+## License
 
 © 2026 Guilherme Lemos. All rights reserved.

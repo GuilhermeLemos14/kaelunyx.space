@@ -1,6 +1,8 @@
 ---
 import Head from "@/components/Head.astro";
-// import site from "@/data/site.ts";
+// import site from "@/data/site";
+
+import "@/styles/global.css";
 
 export interface Props {
 	title: string;
@@ -17,7 +19,7 @@ const { title, description, url, noindex = false } = Astro.props;
 	<head>
 		<Head {title} {description} {url} {noindex} />
 	</head>
-	<body>
+	<body class="text-center">
 		<slot />
 	</body>
 </html>

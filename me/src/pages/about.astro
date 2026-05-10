@@ -1,122 +1,148 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import PronounsLink from "@/components/PronounsLink.astro";
+import Footer from "@/components/Footer.astro";
 
-import { moreAbout, pronouns, languages } from "@/data/about.ts";
-
-import calculateAge from "@/utils/age.ts";
-
-import "@/styles/style.css";
-import "@/styles/pages/about.css";
+import { moreAbout, pronouns, languages } from "@/data/about";
+import calculateAge from "@/utils/age";
 
 const title = "About — Me Kaelunyx Space";
 const description =
-	"Kaelunyx — artist, frontend web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
+	"Kaelunyx — artist, front-end web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
 const url = "about";
+const nofooter = true;
 ---
 
-<Layout {title} {description} {url}>
-	<header>
-		<h1>Hi, I'm Kaelunyx</h1>
-		<p>
-			I'm a bit too much for a simple website. Everything here is just the
-			essentials... <em>for now.</em>
-		</p>
-		<nav>
-			<a class="page-link" href="/">Home</a>
-			<a class="page-link" href="/contact/">Contact</a>
-			<a class="page-link" href="/credits/">Credits</a>
-		</nav>
-	</header>
-	<main>
-		<section id="about">
-			<h2>About me</h2>
-			<p>
-				Hi, my name is Guilherme Lemos, known online as
-				<abbr title="Kaelunyx Sylen Rivenheart">Kaelunyx</abbr>.
+<Layout {title} {description} {url} {nofooter}>
+	<div class="about-div">
+		<header class="text-center py-10 px-18">
+			<h1 class="text-4xl mb-3">Hi, I'm Kaelunyx</h1>
+			<p class="my-4">
+				I'm a bit too much for a simple website. Everything here is just
+				the essentials... <em>for now.</em>
 			</p>
-			<p>
-				I'm {calculateAge()} years old and the developer of this entire website
-				lol
-			</p>
-			<p>
-				I live in Brazil, more specifically in the Northeast region. I
-				dream of living in Canada one day.
-			</p>
-			{
-				/* I have a deep love for cosmic aesthetics, which influences my art,
-                music, and even my style. I find beauty in the vastness of space and
-                the mysteries it holds. */
-				moreAbout.map(({ title, description }) => (
-					<p>
-						<strong>{title}:</strong> {description}
-					</p>
-				))
-			}
-			<p>
-				P.S. I honestly had no idea what to write here when I started
-				this page. Now it's huge. Still, if something's missing — just
-				ask.
-			</p>
-			<p>
-				<strong>My alarm</strong>
-			</p>
-			<div class="iframe-wrapper">
-				<iframe
-					title="My Alarm"
-					src="https://open.spotify.com/embed/track/0tKVPaVz1PzHUXafgfvm35?utm_source=generator"
-					width="100%"
-					height="152"
-					allow="
-                        autoplay;
-                        clipboard-write;
-                        encrypted-media;
-                        fullscreen;
-                        picture-in-picture;
-                    "
-					loading="lazy"
-					allowfullscreen>
-				</iframe>
-			</div>
-		</section>
-		<section id="identity">
-			<h2>Identity</h2>
-			<p>
-				<strong>Pronouns:</strong>
-			</p>
-			<ul id="pronouns-list">
+			<nav class="about-nav">
 				{
-					pronouns.map(({ name, lang, list }) => {
-						return (
-							<li>
-								<strong>{name}:</strong>
-								{list.map(({ link, pronouns }) => (
-									<PronounsLink {lang} {link} {pronouns} />
-								))}
-							</li>
-						);
-					})
-				}
-			</ul>
-			<p>
-				<strong>Role:</strong>
-				Frontend Web Developer (accessibility first)
-			</p>
-			<p><strong>Languages:</strong></p>
-			<ul>
-				{
-					languages.map(({ level, langs }) => (
-						<li>
-							<strong>{level}:</strong> {langs.join(" ")}
-						</li>
+					[
+						{
+							title: "Home",
+							href: "/",
+						},
+						{
+							title: "Contact",
+							href: "/contact/",
+						},
+						{
+							title: "Credits",
+							href: "/credits/",
+						},
+					].map(({ title, href }) => (
+						<a class="page-link" {href}>
+							{title}
+						</a>
 					))
 				}
-			</ul>
-			<p>Furry · Therian · Tech Nerd</p>
-			<p>Multifandom · Cosmic‑aligned</p>
-			<p>Dark softie · Whimsigoth touch</p>
-			<p>Autistic (level 1) · High abilities / gifted</p>
-			<p>You only know a few things... but there's still more.</p>
-		</section>
-	</main>
+			</nav>
+		</header>
+		<main class="px-5">
+			<section class="about-section" id="about">
+				<h2 class="text-2xl text-cosmic-adaptive-purple my-4">
+					About me
+				</h2>
+				<p>
+					Hi, my name is Guilherme Lemos, known online as
+					<abbr title="Kaelunyx Sylen Rivenheart">Kaelunyx</abbr>.
+				</p>
+				<p>
+					I'm {calculateAge()} years old and the developer of this entire
+					website lol
+				</p>
+				<p>
+					I live in Brazil, more specifically in the Northeast region.
+					I dream of living in Canada one day.
+				</p>
+				{
+					/* I have a deep love for cosmic aesthetics, which influences my art,
+					music, and even my style. I find beauty in the vastness of space and
+					the mysteries it holds. */
+					moreAbout.map(({ title, description }) => (
+						<p class="strong-paragraph">
+							<strong>{title}:</strong> {description}
+						</p>
+					))
+				}
+				<p class="text-center mx-8">
+					P.S. I honestly had no idea what to write here when I
+					started this page. Now it's huge. Still, if something's
+					missing — just ask.
+				</p>
+				<p class="strong-paragraph">
+					<strong>My alarm</strong>
+				</p>
+				<div class="iframe-wrapper">
+					<iframe
+						title="My Alarm"
+						src="https://open.spotify.com/embed/track/0tKVPaVz1PzHUXafgfvm35?utm_source=generator"
+						width="100%"
+						height="152"
+						allow="
+								autoplay;
+								clipboard-write;
+								encrypted-media;
+								fullscreen;
+								picture-in-picture;
+							"
+						loading="lazy"
+						allowfullscreen>
+					</iframe>
+				</div>
+			</section>
+			<section class="about-section" id="identity">
+				<h2 class="text-2xl text-cosmic-adaptive-purple my-4">
+					Identity
+				</h2>
+				<p class="ul-paragraph">
+					<strong>Pronouns:</strong>
+				</p>
+				<ul id="pronouns-list">
+					{
+						pronouns.map(({ name, lang, list }) => {
+							return (
+								<li>
+									<strong>{name}:</strong>
+									{list.map(({ link, pronouns }) => (
+										<PronounsLink
+											{lang}
+											{link}
+											{pronouns}
+										/>
+									))}
+								</li>
+							);
+						})
+					}
+				</ul>
+				<p>
+					<strong>Role:</strong>
+					Frontend Web Developer (accessibility first)
+				</p>
+				<p class="ul-paragraph"><strong>Languages:</strong></p>
+				<ul>
+					{
+						languages.map(({ level, langs }) => (
+							<li>
+								<strong>{level}:</strong> {langs.join(" ")}
+							</li>
+						))
+					}
+				</ul>
+				<p>Furry · Therian · Tech Nerd</p>
+				<p>Multifandom · Cosmic‑aligned</p>
+				<p>Dark softie · Whimsigoth touch</p>
+				<p>Autistic (level 1) · High abilities / gifted</p>
+				<p>You only know a few things... but there's still more.</p>
+			</section>
+		</main>
+		<Footer />
+	</div>
 </Layout>

@@ -1,13 +1,9 @@
 ---
 // /src/components/Head.astro
 import { Seo } from "astro-seo-meta";
-import site from "@/data/site.ts";
 
-import { socialsJsonLd } from "@/data/socials.ts";
-
-import "@/styles/vars.css";
-import "@/styles/reset.css";
-import "@/styles/accessibility.css";
+import site from "@/data/site";
+import { socialsJsonLd } from "@/data/socials";
 
 export interface Props {
 	title: string;
@@ -51,7 +47,7 @@ const twitterSite = "@Kaelunyx";
 		image,
 		site: twitterSite,
 	}}
-	robots={noindex ? "noindex, nofollow" : undefined}
+	robots={noindex ? "noindex, nofollow" : "index, follow"}
 />
 <meta name="author" content={authorName} />
 <link rel="canonical" href={url} />

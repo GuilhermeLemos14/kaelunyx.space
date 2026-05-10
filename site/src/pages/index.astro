@@ -1,8 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import "@/styles/style.css";
-import "@/styles/pages/index.css";
+import Nav from "@/components/Nav.astro";
 
 const title = "Kaelunyx Space";
 const description =
@@ -15,32 +14,12 @@ const nonav = true;
 ---
 
 <Layout {title} {description} {header} {nonav}>
-	<p>
-		Welcome to Kaelunyx Space, a portal to other dimensions of the web.
-		Explore my art, blog, and more as I wander through unseen layers of the
-		web.
-	</p>
-	<div id="nav-wrapper">
-		<nav aria-label="Main navigation">
-			<ul>
-				<li>
-					<a href="https://art.kaelunyx.space">Art</a>
-				</li>
-				<li>
-					<a href="https://blog.kaelunyx.space">Blog </a>
-				</li>
-				<li>
-					<a href="https://me.kaelunyx.space">Me</a>
-				</li>
-				<li>
-					<a href="https://portfolio.kaelunyx.space">Portfolio</a>
-				</li>
-			</ul>
-			<ul>
-				<li><a href="/communities/">Communities</a></li>
-				<li><a href="/sitemap/">Sitemap</a></li>
-				<li><a href="/webrings/">Webrings</a></li>
-			</ul>
-		</nav>
-	</div>
+	<main>
+		<p class="text-center">
+			Welcome to Kaelunyx Space, a portal to other dimensions of the web.
+			Explore my art, blog, and more as I wander through unseen layers of
+			the web.
+		</p>
+		<Nav />
+	</main>
 </Layout>

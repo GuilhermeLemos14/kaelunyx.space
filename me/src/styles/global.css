@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+	--color-cosmic-purple: hsl(275, 86%, 36%);
+	--color-cosmic-blue: hsl(233, 100%, 57%);
+	--color-cosmic-neon: hsl(312, 100%, 50%);
+	--color-cosmic-dark: hsl(231, 64%, 11%);
+	--color-cosmic-light: hsl(240, 100%, 95%);
+
+	--color-cosmic-adaptive-purple: #b156f2;
+	--color-cosmic-adaptive-blue: hsl(233, 100%, 77%);
+
+	--color-cosmic-blue-hover: hsl(233, 86%, 49%);
+
+	--color-body-bg1: hsl(231, 64%, 7%);
+	--color-body-bg2: hsl(275, 86%, 20%);
+
+	--color-background: var(--color-cosmic-dark);
+	--color-foreground: var(--color-cosmic-light);
+	--color-muted-fg: color-mix(
+		in srgb,
+		var(--color-foreground) 60%,
+		var(--color-background)
+	);
+
+	--color-link-fg: var(--color-cosmic-adaptive-blue);
+
+	--color-nav: #dedede;
+
+	--color-button: hsl(from var(--color-cosmic-light) h s calc(l - 4));
+	--color-button-hover: hsl(from var(--color-cosmic-light) h 50 calc(l - 12));
+	--color-button-fg: var(--color-cosmic-purple);
+
+	--color-border: #555;
+	--border: 1px solid var(--color-border);
+	--outline: 2px var(--color-cosmic-light) solid;
+
+	--font-default: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+	* {
+		@apply box-border;
+	}
+
+	html {
+		@apply p-0 m-0 scroll-smooth overflow-x-hidden;
+	}
+
+	body {
+		@apply antialiased flex flex-col relative p-0 m-0 bg-fixed justify-center items-center min-h-dvh bg-linear-to-b from-body-bg1 to-body-bg2 font-default overflow-x-hidden select-none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold;
+	}
+
+	abbr {
+		@apply text-[#b8beff] cursor-help no-underline;
+
+		&:hover {
+			@apply underline;
+		}
+	}
+
+	strong {
+		@apply text-cosmic-adaptive-blue font-bold;
+	}
+
+	ul {
+		@apply ml-6;
+
+		li {
+			@apply my-1;
+
+			strong {
+				@apply text-cosmic-neon;
+			}
+		}
+	}
+}
+
+@layer components {
+	.index-nav {
+		@apply flex flex-col relative items-center gap-5 min-w-55 p-0 mx-auto text-center;
+
+		a {
+			@apply inline-block p-4 rounded-lg no-underline bg-cosmic-blue hover:bg-cosmic-blue-hover text-nav transition-colors duration-300 font-bold min-w-[inherit] max-w-min;
+		}
+	}
+
+	.iframe-wrapper {
+		@apply mx-5;
+
+		> iframe {
+			@apply rounded-2xl;
+		}
+	}
+
+	.about-div {
+		@apply bg-background text-foreground rounded-2xl shadow-[#0001] shadow-[0_0_10px] max-w-3xl min-h-dvh mx-auto px-8 py-5 z-10 max-md:m-0 max-md:rounded-none;
+
+		p {
+			@apply my-3;
+		}
+	}
+
+	.about-nav {
+		@apply flex py-2 justify-center gap-6;
+
+		a {
+			@apply bg-button text-button-fg py-2.5 px-5 rounded-lg font-bold no-underline transition-colors duration-300 ease-linear;
+
+			&:hover,
+			&:focus-visible {
+				@apply bg-button-hover;
+			}
+
+			&:focus-visible {
+				@apply outline-2 outline-offset-2 outline-solid outline-cosmic-light;
+			}
+		}
+	}
+
+	.about-section {
+		@apply py-12 border-t border-solid border-border;
+	}
+
+	.strong-paragraph {
+		@apply block mt-3 mb-2 mx-6;
+	}
+
+	.ul-paragraph {
+		@apply my-2;
+	}
+
+	.icon {
+		@apply text-cosmic-light fill-cosmic-light max-w-8 max-h-8 transition-colors duration-300 ease-in-out;
+	}
+
+	.contact-link {
+		@apply inline-flex relative items-center justify-center p-2 m-0 rounded-lg outline-2 outline-solid outline-transparent duration-300 transition-all ease-in-out;
+
+		.hover-contact {
+			@apply absolute top-full left-1/2 -translate-x-1/2 translate-y-2 bg-cosmic-dark text-cosmic-adaptive-blue py-1 px-2 rounded-sm opacity-0 transition-all duration-300 ease-in-out;
+			visibility: hidden;
+		}
+
+		&:hover,
+		&:focus-visible {
+			@apply outline-cosmic-adaptive-blue shadow-[0_0_12px] shadow-[rgba(100,200,255,0.4)];
+
+			.icon {
+				@apply text-cosmic-adaptive-blue fill-cosmic-adaptive-blue;
+			}
+
+			.hover-contact {
+				@apply opacity-100 visible translate-0;
+			}
+		}
+	}
+
+	.custom-btn {
+		@apply block w-max bg-button text-button-fg font-default px-4 py-2.5 rounded-md border-border cursor-pointer transition-colors duration-300 ease-linear hover:bg-button-hover;
+	}
+}

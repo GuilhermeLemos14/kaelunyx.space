@@ -1,20 +1,33 @@
 ---
 import LayoutCredits from "@/layouts/LayoutCredits.astro";
 
-import "../styles/style.css";
-import "../styles/pages/credits.css";
+import "@/styles/credits.css";
 
 const title = "Credits — Me Kaelunyx Space";
 const description =
-	"Credits page is currently under construction. Please check back later for updates.";
-// "Acknowledging the talented individuals and resources that contributed to the creation of Kaelunyx Space, a personal universe of art and code.";
+	"Acknowledging the talented individuals and resources that contributed to the creation of Kaelunyx Space, a personal universe of art and code.";
 const url = "credits";
 const noindex = true;
 ---
 
 <LayoutCredits {title} {description} {url} {noindex}>
-	<div>
-		<p>There's nothing here yet</p>
-		<a href="/" class="page-link">Back to Home</a>
-	</div>
+	<p class="mb-2 text-sm">
+		I'm still trying to do something better, okay?? <span
+			class="font-bold text-red-400">I HAVE NO TIME SORRYYY</span
+		>
+	</p>
+	<p>People who helped me a lot:</p>
+	<a
+		href="https://www.youtube.com/channel/UCTs0PrJ0u7NSZeVCSBcLLzA"
+		class="text-cosmic-adaptive-blue hover:underline">MocchaShake</a
+	>
+	<p class="mt-2 text-sm">
+		THERE'S STILL MORE BUT IDK ALL THE PEOPLE SO PLEASE CONTACT ME IF I
+		FORGOT YAAA <a
+			class="text-cosmic-adaptive-blue hover:underline"
+			href="mailto:contact@kaelunyx.space"
+			target="_blank">contact@kaelunyx.space</a
+		>
+	</p>
+	<a href="/" class="custom-btn page-link mt-4">Back to Home</a>
 </LayoutCredits>
