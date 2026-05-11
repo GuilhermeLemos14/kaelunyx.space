@@ -1,7 +1,12 @@
-# kaelunyx.space
+# Kaelunyx Space
 
-Kaelunyx Website (My Personal Website).
+Kaelunyx Website (My Personal Website)
 Have fun! ^^
+
+## Info
+
+Created by: Guilherme Lemos / Kaelunyx
+Version: v9.1.1
 
 ## License
 
