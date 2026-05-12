@@ -8,7 +8,7 @@ import calculateAge from "@/utils/age";
 
 const title = "About — Me Kaelunyx Space";
 const description =
-	"Kaelunyx — artist, front-end web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
+	"Kaelunyx — artist, fullstack web developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
 const url = "about";
 const nofooter = true;
 ---
@@ -124,14 +124,23 @@ const nofooter = true;
 				</ul>
 				<p>
 					<strong>Role:</strong>
-					Frontend Web Developer (accessibility first)
+					Fullstack Web Developer (Front-end a11y first)
 				</p>
 				<p class="ul-paragraph"><strong>Languages:</strong></p>
 				<ul>
 					{
-						languages.map(({ level, langs }) => (
+						languages.map(({ level, langs, abbr }) => (
 							<li>
-								<strong>{level}:</strong> {langs.join(" ")}
+								<strong>
+									{abbr ? (
+										<abbr class="text-inherit" title={abbr}>
+											{level + ":"}
+										</abbr>
+									) : (
+										level + ":"
+									)}
+								</strong>
+								{" " + langs.join(" ")}
 							</li>
 						))
 					}

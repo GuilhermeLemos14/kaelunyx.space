@@ -2,10 +2,10 @@
 Developer: Guilherme Lemos
 Site: https://kaelunyx.space/
 Location: Alagoas, Brasil
-Role: Front-end dev, cosmic designer, automation enjoyer
+Role: Fullstack dev, cosmic designer, automation enjoyer
 
 /* TECHNOLOGY */
-Stack: HTML, CSS, SASS/SCSS, Tailwind, TS, Astro, Cloudflare
+Stack: HTML, CSS, SASS/SCSS, Tailwind, JavaScript, TypeScript, Astro, Cloudflare
 Tools: VS Code, Git, GitHub
 Design: SVG sprites, modular includes, cosmic UI vibes
 
@@ -13,7 +13,7 @@ Design: SVG sprites, modular includes, cosmic UI vibes
 Last update: 2026
 Source: Public repository
 Made with: caffeine, curiosity, and a bit of chaos
-Version: 9.1.2
+Version: 9.1.3
 
 /* MESSAGE */
 If you're reading this, you're probably a curious human.

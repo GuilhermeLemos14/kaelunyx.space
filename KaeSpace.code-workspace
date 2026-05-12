@@ -5,12 +5,16 @@
 			"path": ".",
 		},
 		{
+			"name": "kaelunyx.space",
+			"path": "site",
+		},
+		{
 			"name": "me.kaelunyx.space",
 			"path": "me",
 		},
 		{
-			"name": "kaelunyx.space",
-			"path": "site",
+			"name": "blog.kaelunyx.space",
+			"path": "blog",
 		},
 	],
 	"settings": {
@@ -56,6 +60,7 @@
 			"therian",
 			"titleize",
 			"toyhouse",
+			"unifiedjs",
 			"webring",
 			"webrings",
 			"whimsigoth",
@@ -84,7 +89,7 @@
 		],
 	},
 	"extensions": {
-		"recommendations": ["astro-build.astro-vscode"],
+		"recommendations": ["astro-build.astro-vscode", "unifiedjs.vscode-mdx"],
 		"unwantedRecommendations": [],
 	},
 }

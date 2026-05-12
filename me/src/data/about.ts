@@ -1,19 +1,21 @@
-export const languages: { level: string; langs: string[] }[] = [
+export const languages: { level: string; langs: string[]; abbr?: string }[] = [
     {
+        abbr: "C1/C2",
         level: "Native",
-        langs: ["pt-BR"]
+        langs: ["pt-BR"],
     },
     {
         level: "B2/C1",
-        langs: ["en", "en-US", "en-CA"]
+        langs: ["en", "en-US", "en-CA"],
     },
     {
         level: "A1/A2",
-        langs: ["es", "es-ES"]
+        langs: ["es", "es-ES"],
     },
     {
+        abbr: "A1",
         level: "Soon",
-        langs: ["fr-CA"]
+        langs: ["fr-CA"],
     }
 ];
 
@@ -40,7 +42,7 @@ export const moreAbout: { title: string; description: string }[] = [
     },
     {
         title: "Communities & connection",
-        description: "I've tried several spaces (therian, etc.) and found many too closed or performative. I still want to belong — but at my own pace, without having to prove myself constantly. If you're a furry, a therian, a neurodivergent musician, a dev who cares about a11y, or just a dark softie — feel free to reach out."
+        description: "I've tried several spaces (therian, etc.) and found many too closed or performative. I still want to belong — but at my own pace, without having to prove myself constantly. If you value kindness, creativity, gentle connection, or just want to talk, feel free to reach out."
     }
 ];
 
@@ -50,7 +52,7 @@ const _pronouns: { [key: string]: { lang: string; list: { link: string; pronouns
         list: [
             { link: "he", pronouns: "he/him" },
             { link: "they/them/themself", pronouns: "they/them/themself" },
-            { link: "xe", pronouns: "xe/xem" }
+            { link: "xe", pronouns: "xe/xem" },
         ]
     },
     Portuguese: {
@@ -59,7 +61,7 @@ const _pronouns: { [key: string]: { lang: string; list: { link: string; pronouns
             { link: "ele", pronouns: "o/ele/o" },
             { link: "o,elu,o,delu,nelu,um,elus,delus,nelus,os,uns,co,go,meu,esse,este,", pronouns: "o/elu/o" },
             { link: "el&ael", pronouns: "ê/el/e ou ae/ael/e" },
-            { link: "elx", pronouns: "x/elx/x" }
+            { link: "elx", pronouns: "x/elx/x" },
         ]
     },
     Spanish: {
