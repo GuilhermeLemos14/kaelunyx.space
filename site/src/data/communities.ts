@@ -61,15 +61,6 @@ const communities: {
             "url": "https://discord.gg/youshouyanes"
         },
         {
-            "id": "henri",
-            "lang": "pt-BR",
-            "platform": "Discord",
-            "name": "Confeitaria do Henri",
-            "description": "Bem-vindos à doceria mais fofinha e aconchegante do Discord! 🧁💖<br>Aqui cada membro é um ingrediente especial que deixa o nosso cantinho ainda mais doce e divertido~ 🍪🌈",
-            "url": "https://discord.gg/yyehbhM3",
-            "rep": "henrigayzao"
-        },
-        {
             "id": "library-of-beasts",
             "lang": "en",
             "platform": "Discord",
