@@ -1,0 +1,43 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Kaelunyx Blog</h1>
+			<p>
+				Welcome to my blog! I'm Kaelunyx, a software developer and
+				technology enthusiast. This blog is a space where I share my
+				thoughts, experiences, and insights on various topics related to
+				software development, programming languages, and the tech
+				industry in general.
+			</p>
+			<p>
+				This blog is built with <a
+					href="https://astro.build/"
+					target="_blank"
+					rel="noopener noreferrer">Astro</a
+				> and deployed on <a
+					href="https://cloudflare.com/"
+					target="_blank"
+					rel="noopener noreferrer">Cloudflare</a
+				>.
+			</p>
+			<p>
+				I hope you find the content here informative and engaging. Feel
+				free to explore the posts and leave your comments. Happy
+				reading!
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
