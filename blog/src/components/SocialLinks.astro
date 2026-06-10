@@ -1,50 +1,25 @@
 ---
-const sprite_src = "/sprite.svg";
+import SocialLink from "./SocialLink.astro";
 ---
 
 <div class="social-links mr-4">
 	<a href="https://kaelunyx.space">
 		<span class="sr-only">Visit Kaelunyx's personal website</span>
-		<!-- I don't have an svg icon for that -->
 		<img aria-hidden="true" height="32" width="32" src="/profile.png" />
 	</a>
-	<a
+	<SocialLink
 		href="https://github.com/GuilhermeLemos14"
-		target="_blank"
-		rel="noopener noreferrer">
-		<span class="sr-only">Go to Kaelunyx's GitHub profile</span>
-		<svg
-			aria-hidden="true"
-			width="32"
-			height="32"
-			astro-icon="social/github">
-			<use href={sprite_src + "#github"}></use>
-		</svg>
-	</a>
-	<a
+		social="github"
+		alt="Go to Kaelunyx's GitHub profile"
+	/>
+	<SocialLink
 		href="https://www.instagram.com/kaelunyx"
-		target="_blank"
-		rel="noopener noreferrer">
-		<span class="sr-only">Follow Kaelunyx on Instagram</span>
-		<svg
-			aria-hidden="true"
-			width="32"
-			height="32"
-			astro-icon="social/instagram">
-			<use href={sprite_src + "#instagram"}></use>
-		</svg>
-	</a>
-	<a
+		social="instagram"
+		alt="Follow Kaelunyx on Instagram"
+	/>
+	<SocialLink
 		href="https://youtube.com/@Kaelunyx"
-		target="_blank"
-		rel="noopener noreferrer">
-		<span class="sr-only">Follow Kaelunyx on YouTube</span>
-		<svg
-			aria-hidden="true"
-			width="32"
-			height="32"
-			astro-icon="social/youtube">
-			<use href={sprite_src + "#youtube"}></use>
-		</svg>
-	</a>
+		social="youtube"
+		alt="Follow Kaelunyx on YouTube"
+	/>
 </div>

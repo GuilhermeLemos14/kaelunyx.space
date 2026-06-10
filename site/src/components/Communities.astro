@@ -90,17 +90,17 @@ const spritePath = "/sprite.svg";
 					/>
 
 					<h2
-						class="text-xl text-accent mt-0 mb-3"
+						class="text-accent mt-0 mb-3 text-xl"
 						set:html={community.name}
 					/>
 					<p
-						class="block text-center mb-4"
+						class="mb-4 block text-center"
 						set:html={community.description}
 					/>
 
 					{typeof community.url === "object" ? (
 						<>
-							<p class="block text-accent mb-2">
+							<p class="text-accent mb-2 block">
 								<strong>Join the Community</strong>
 							</p>
 							<div class="community-urls">
@@ -109,7 +109,7 @@ const spritePath = "/sprite.svg";
 										<a
 											class="join-button"
 											href={url}
-											rel="noopener noreferrer"
+											rel="external noopener noreferrer"
 											target="_blank">
 											<svg
 												aria-hidden="true"
@@ -129,7 +129,7 @@ const spritePath = "/sprite.svg";
 						typeof community.url === "string" && (
 							<a
 								href={community.url}
-								class="mx-auto max-w-max join-button"
+								class="join-button mx-auto max-w-max"
 								rel="external noopener noreferrer"
 								target="_blank">
 								Join the Community

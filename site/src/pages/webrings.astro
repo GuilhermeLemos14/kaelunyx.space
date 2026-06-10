@@ -22,6 +22,7 @@ const noindex = true;
 				if (!widget) return;
 				Array.from(widget.getElementsByTagName("a")).forEach((link) => {
 					link.target = "_blank";
+					link.rel = "external";
 					link.style.cursor = "pointer";
 				});
 			});

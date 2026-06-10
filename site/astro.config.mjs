@@ -19,7 +19,10 @@ export default defineConfig({
 	site: "https://kaelunyx.space",
 	integrations: [
 		sitemap({
-			customSitemaps: ["https://me.kaelunyx.space/sitemap-index.xml"],
+			customSitemaps: [
+				"https://me.kaelunyx.space/sitemap-index.xml",
+				"https://blog.kaelunyx.space/sitemap-index.xml",
+			],
 			filter: (page) => {
 				return (
 					!page.includes("/communities/form") &&
