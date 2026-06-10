@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer components {
+	header {
+        .social-links,
+        .social-links a {
+            @apply flex;
+        }
+
+        nav a.active {
+            @apply underline border-b-accent;
+        }
+	}
+
+    footer .social-links {
+        @apply flex justify-center gap-4 mt-4;
+
+        a {
+            @apply no-underline text-new-gray hover:text-new-gray-dark transition-colors duration-300 ease-in-out;
+        }
+    }
+
+    .header-link {
+        @apply inline-block no-underline;
+
+        &.active {
+            @apply font-bold underline;
+        }
+    }
+
+	.prose p {
+		@apply mb-4;
+	}
+
+
+	@media (max-width: 720px) {
+		header .social-links {
+			@apply hidden;
+		}
+	}
+}

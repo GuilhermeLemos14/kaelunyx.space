@@ -2,14 +2,12 @@
 import Head from "@/components/Head.astro";
 import Footer from "@/components/Footer.astro";
 import Stars from "@/components/Stars.astro";
-import siteUrl from "@/utils/siteUrl.ts";
 
 import "@/styles/global.css";
 
 export interface Props {
 	title: string;
 	description: string;
-	url?: string;
 	noindex?: boolean;
 	nofooter?: boolean;
 	footerBorder?: boolean;
@@ -18,19 +16,16 @@ export interface Props {
 const {
 	title,
 	description,
-	url: _url = "",
 	noindex = false,
 	nofooter = false,
 	footerBorder: border = true,
 } = Astro.props;
-
-const url = siteUrl(_url);
 ---
 
 <!doctype html>
 <html lang="en-CA">
 	<head>
-		<Head {title} {description} {url} {noindex} />
+		<Head {title} {description} {noindex} />
 	</head>
 	<body>
 		<slot />

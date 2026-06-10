@@ -5,16 +5,18 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://me.kaelunyx.space",
 	vite: {
 		plugins: [tailwindcss()],
 		resolve: {
 			alias: {
 				"@": "/src",
+				"@public": "/public",
 				"/src": "/src",
+				"/public": "/public",
 			},
 		},
 	},
-	site: "https://me.kaelunyx.space",
 	integrations: [
 		sitemap({
 			filter: (page) => !page.includes("/credits"),

@@ -1,0 +1,45 @@
+{
+	"bracketSameLine": true,
+	"endOfLine": "lf",
+	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+	"tabWidth": 4,
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "astro"
+			}
+		},
+		{
+			"files": "*.css",
+			"options": {
+				"parser": "css"
+			}
+		},
+		{
+			"files": "*.html",
+			"options": {
+				"parser": "html"
+			}
+		},
+		{
+			"files": "*.json",
+			"options": {
+				"parser": "json"
+			}
+		},
+		{
+			"files": "*.md",
+			"options": {
+				"parser": "markdown"
+			}
+		},
+		{
+			"files": "*.mdx",
+			"options": {
+				"parser": "mdx"
+			}
+		}
+	]
+}

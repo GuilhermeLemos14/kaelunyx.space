@@ -1,6 +1,6 @@
 ---
 title: "Welcome to my Blog"
-description: ""
+description: "First post on my own blog"
 pubDate: "May 26 2026"
 ---
 
@@ -10,6 +10,7 @@ I'm so happy you can't even think how much happiness I feel!
 I've been planning creating this feature for SOOOO long I didn't even notice I started to procrastinate...
 
 By the way, the blog system is still under development! So there's a lot of issues
+
 Anyway, I don't have too many things to talk about, so I'll just write anything here and uhh ok
 
 ## FAQ

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+	--color-cosmic-purple: hsl(275, 86%, 36%);
+	--color-cosmic-blue: hsl(233, 100%, 57%);
+	--color-cosmic-neon: hsl(312, 100%, 50%);
+	--color-cosmic-dark: hsl(231, 64%, 11%);
+	--color-cosmic-light: hsl(240, 100%, 95%);
+
+	--color-cosmic-adaptive-purple: #b156f2;
+	--color-cosmic-adaptive-blue: hsl(233, 100%, 77%);
+
+	--color-cosmic-blue-hover: hsl(233, 86%, 49%);
+
+	--color-body-bg1: hsl(231, 64%, 7%);
+	--color-body-bg2: hsl(275, 86%, 20%);
+
+	--color-background: var(--color-cosmic-dark);
+	--color-foreground: var(--color-cosmic-light);
+	--color-muted-fg: color-mix(
+		in srgb,
+		var(--color-foreground) 60%,
+		var(--color-background)
+	);
+
+	--color-link-fg: var(--color-cosmic-adaptive-blue);
+
+	--color-nav: #dedede;
+
+	--color-button: hsl(from var(--color-cosmic-light) h s calc(l - 4));
+	--color-button-hover: hsl(from var(--color-cosmic-light) h 50 calc(l - 12));
+	--color-button-fg: var(--color-cosmic-purple);
+
+	--color-border: #555;
+	--border: 1px solid var(--color-border);
+	--outline: 2px var(--color-cosmic-light) solid;
+
+	--font-default: "Space Grotesk", sans-serif;
+}

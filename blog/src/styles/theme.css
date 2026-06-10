@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+	/* use inside rgb or rgba */
+	--new-gray: 96, 115, 159;
+	--new-black: 15, 18, 25;
+	--new-gray-light: 229, 233, 240;
+	--new-gray-dark: 34, 41, 57;
+
+	--color-accent: #2337ff;
+	--color-accent-dark: #000d8a;
+	--color-new-black: rgb(15, 18, 25);
+
+	--color-new-gray: rgb(96, 115, 159);
+	--color-new-gray-light: rgb(229, 233, 240);
+	--color-new-gray-dark: rgb(34, 41, 57);
+
+	--font-atkinson: "Atkinson Hyperlegible", sans-serif;
+
+	--gray-gradient: rgba(var(--new-gray-light), 50%), #fff;
+
+	--box-shadow:
+		0 2px 6px rgba(var(--new-gray), 25%), 0 8px 24px rgba(var(--new-gray), 33%),
+		0 16px 32px rgba(var(--new-gray), 33%);
+}

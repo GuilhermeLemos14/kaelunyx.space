@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE } from "@/consts";
 import ProfilePicture from "@public/profile.png";
 import HeaderLink from "@/components/HeaderLink.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
@@ -9,9 +9,14 @@ const image = ProfilePicture;
 
 <header>
 	<nav>
-		<h2>
-			<a href="/">{SITE_TITLE}</a>
-		</h2>
+		<a class="ml-4 block" href="/">
+			<img
+				src={image.src}
+				alt="Profile Picture"
+				class="mr-2 inline-block h-10 w-10 rounded-lg"
+			/>
+			<span class="align-middle text-2xl font-bold">{SITE_TITLE}</span>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -20,50 +25,3 @@ const image = ProfilePicture;
 		<SocialLinks />
 	</nav>
 </header>
-<style is:global>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-
-		h2 {
-			margin: 0;
-			font-size: 1em;
-
-			a,
-			a.active {
-				text-decoration: none;
-			}
-		}
-
-		nav {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-
-			a {
-				padding: 1em 0.5em;
-				color: var(--black);
-				border-bottom: 4px solid transparent;
-				text-decoration: none;
-
-				&.active {
-					text-decoration: none;
-					border-bottom-color: var(--accent);
-				}
-			}
-		}
-
-		.social-links,
-		.social-links a {
-			display: flex;
-		}
-
-		@media (max-width: 720px) {
-			.social-links {
-				display: none;
-			}
-		}
-	}
-</style>

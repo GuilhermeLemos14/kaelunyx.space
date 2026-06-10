@@ -1,15 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import ContactLink from "@/components/ContactLink.astro";
-import { socials } from "@/data/socials.ts";
+import { socials } from "@/data/socials";
 
 const title = "Contact — Me Kaelunyx Space";
 const description =
 	"Kaelunyx — artist, developer, and musician. A personal universe shaped by cosmic aesthetics and digital creativity.";
-const url = "contact";
 ---
 
-<Layout {title} {description} {url} footerBorder={false}>
+<Layout {title} {description} footerBorder={false}>
 	<header class="text-center">
 		<h1 class="text-3xl text-cosmic-adaptive-blue my-5">Contact</h1>
 		<p class="text-muted-fg mb-4 mt-3">

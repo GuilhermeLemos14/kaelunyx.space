@@ -5,7 +5,9 @@
 	"compilerOptions": {
 		"paths": {
 			"@/*": ["./src/*"],
-			"/src/*": ["./src/*"]
+			"@public/*": ["./public/*"],
+			"/src/*": ["./src/*"],
+			"/public/*": ["./public/*"]
 		}
 	}
 }

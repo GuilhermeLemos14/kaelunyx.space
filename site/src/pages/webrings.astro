@@ -5,7 +5,6 @@ import WebringsComp from "@/components/WebringsComp.astro";
 
 const title = "Webrings — Kaelunyx Space";
 const description = "A collection of webrings that I'm part of.";
-const url = "webrings";
 const header = {
 	title: "Webrings",
 	subtitle:
@@ -14,7 +13,7 @@ const header = {
 const noindex = true;
 ---
 
-<Layout {title} {description} {url} {header} {noindex}>
+<Layout {title} {description} {header} {noindex}>
 	<main>
 		<WebringsComp />
 		<script is:inline defer>

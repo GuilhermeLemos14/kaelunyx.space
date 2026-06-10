@@ -4,10 +4,13 @@
 	"language": "en-CA,en,pt-BR",
 	"allowCompoundWords": true,
 	"caseSensitive": false,
-	"dictionaries": ["lorem-ipsum"],
+	"dictionaries": [
+		"lorem-ipsum"
+	],
 	"useGitignore": true,
 	"words": [
 		"atkinson",
+		"bradlc",
 		"brazilian",
 		"canadian",
 		"creo",
@@ -16,6 +19,7 @@
 		"elle",
 		"ellu",
 		"ellx",
+		"esbuild",
 		"grotesk",
 		"hintrc",
 		"kaelunyx",
@@ -36,6 +40,7 @@
 		"smushed",
 		"srgb",
 		"sylen",
+		"tailwindcss",
 		"therian",
 		"titleize",
 		"tsconfigs",

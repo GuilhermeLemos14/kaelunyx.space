@@ -4,14 +4,13 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Neko from "@/components/Neko.astro";
 
-import siteUrl from "@/utils/siteUrl.ts";
+import siteUrl from "@/utils/siteUrl";
 
 import "@/styles/global.css";
 
 export interface Props {
 	title: string;
 	description: string;
-	url?: string;
 	noindex?: boolean;
 	header?: {
 		title: string;
@@ -20,22 +19,13 @@ export interface Props {
 	nonav?: boolean;
 }
 
-const {
-	title,
-	description,
-	url: _url = "",
-	header,
-	noindex = false,
-	nonav,
-} = Astro.props;
-
-const url = siteUrl(_url);
+const { title, description, header, noindex = false, nonav } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-CA">
 	<head>
-		<Head {title} {description} {url} {noindex} />
+		<Head {title} {description} {noindex} />
 	</head>
 	<body>
 		<Neko aria-hidden="true" />
