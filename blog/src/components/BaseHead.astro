@@ -2,13 +2,12 @@
 // /src/components/BaseHead.astro
 import "@/styles/global.css";
 import site from "@/data/site";
-import { SITE_TITLE } from "@/consts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 import { socialsJsonLd } from "@/data/socials";
-import { Font } from "astro:assets";
 
 export interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 	noindex?: boolean;
 	image?: string;
 	imageAlt?: string;
@@ -54,17 +53,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Title and Description -->
-<title>{SITE_TITLE}</title>
-<meta name="title" content={SITE_TITLE} />
-<meta name="description" content={description} />
+<title>{title ? SITE_TITLE + " - " + title : SITE_TITLE}</title>
+<meta name="title" content={title ? SITE_TITLE + " - " + title : SITE_TITLE} />
+<meta name="description" content={description || SITE_DESCRIPTION} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content={locale} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={SITE_TITLE} />
-<meta property="og:description" content={description} />
+<meta
+	property="og:title"
+	content={title ? SITE_TITLE + " - " + title : SITE_TITLE}
+/>
+<meta property="og:description" content={description || SITE_DESCRIPTION} />
 
 <!-- Open Graph Image -->
 <meta property="og:image" content={absoluteImage} />
@@ -77,8 +79,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:site" content={twitterHandle} />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={SITE_TITLE} />
-<meta property="twitter:description" content={description} />
+<meta
+	property="twitter:title"
+	content={title ? SITE_TITLE + " - " + title : SITE_TITLE}
+/>
+<meta
+	property="twitter:description"
+	content={description || SITE_DESCRIPTION}
+/>
 <meta property="twitter:image" content={absoluteImage} />
 <meta property="twitter:image:alt" content={imageAlt} />
 

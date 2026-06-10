@@ -10,7 +10,7 @@
 	}
 
 	body {
-		@apply font-atkinson text-new-gray-dark word-wrap-break-word min-h-screen bg-linear-to-b from-gray-300 to-gray-200 bg-no-repeat text-left text-xl leading-[1.7] wrap-break-word antialiased max-[720px]:text-lg;
+		@apply font-atkinson text-new-gray-dark word-wrap-break-word min-h-screen bg-linear-to-b from-gray-200 to-gray-100 bg-no-repeat text-left text-xl leading-[1.7] wrap-break-word antialiased max-[720px]:text-lg;
 	}
 
 	main {
@@ -30,7 +30,7 @@
 			@apply flex items-center justify-between;
 
 			a {
-				@apply border-b-4 border-transparent px-2 py-4 text-new-black no-underline transition-colors duration-300 ease-in-out;
+				@apply text-new-black border-b-4 border-transparent px-2 py-4 no-underline transition-colors duration-300 ease-in-out;
 			}
 		}
 	}
@@ -41,7 +41,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply mt-6 mb-2 leading-[1.2] font-bold text-new-black;
+		@apply text-new-black mt-6 mb-2 leading-[1.2] font-bold;
 	}
 
 	h1 {
