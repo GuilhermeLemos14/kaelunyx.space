@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "@/consts";
+import site from "@/data/site";
 import ProfilePicture from "@public/profile.png";
 import HeaderLink from "@/components/HeaderLink.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
@@ -15,7 +15,7 @@ const image = ProfilePicture;
 				alt="Profile Picture"
 				class="mr-2 inline-block h-10 w-10 rounded-lg"
 			/>
-			<span class="align-middle text-2xl font-bold">{SITE_TITLE}</span>
+			<span class="align-middle text-2xl font-bold">{site.title}</span>
 		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>

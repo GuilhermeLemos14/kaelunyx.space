@@ -1,6 +1,7 @@
 // src/data/site.ts
 export interface SiteData {
-	name: string;
+	title: string;
+	description: string;
 	author: string;
 	twitterHandle: string;
 	dateCreated: string;
@@ -8,10 +9,11 @@ export interface SiteData {
 }
 
 const site: SiteData = {
-	name: "Blog Kaelunyx Space",
+	title: "Kaelunyx Blog",
+	description: "",
 	author: "Guilherme Lemos",
 	twitterHandle: "@Kaelunyx",
-	dateCreated: "2025-01-12T00:00:00-03:00",
+	dateCreated: "2026-01-12T00:00:00-03:00",
 	locale: "en_CA",
 };
 
