@@ -56,7 +56,7 @@ const description = posts
 			}
 
 			ul li:first-child .title {
-				font-size: 2.369rem;
+				font-size: 2.25rem;
 			}
 
 			ul li img {
@@ -99,7 +99,7 @@ const description = posts
 				}
 
 				ul li:first-child {
-					margin-bottom: 0;
+					margin-block: 20px 0;
 				}
 
 				ul li:first-child .title {
@@ -116,7 +116,7 @@ const description = posts
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.id}/`}>
+								<a href={`/post/${post.id}/`}>
 									{post.data.heroImage && (
 										<Image
 											width={720}

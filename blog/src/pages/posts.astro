@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "@/components/BaseHead.astro";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// Generate a short English description based on available blog posts (titles)
+const description = posts
+	.slice(0, 6)
+	.map((p) => p.data.title)
+	.filter(Boolean)
+	.join(" • ");
+---
+
+<BaseHead {description} />
+<meta name="robots" content="noindex, nofollow" />
+<meta http-equiv="refresh" content="0; url=https://blog.kaelunyx.space/post" />

@@ -19,5 +19,12 @@ export default defineConfig({
 			},
 		},
 	},
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => {
+				return !page.includes("/blog/") && !page.endsWith("/posts/");
+			},
+		}),
+	],
 });

@@ -53,8 +53,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Title and Description -->
-<title>{title ? siteTitle + " - " + title : siteTitle}</title>
-<meta name="title" content={title ? siteTitle + " - " + title : siteTitle} />
+<title>{title ? `${siteTitle} - ${title}` : siteTitle}</title>
+<meta name="title" content={title ? `${siteTitle} - ${title}` : siteTitle} />
 <meta name="description" content={description || siteDescription} />
 
 <!-- Open Graph / Facebook -->
@@ -64,7 +64,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:url" content={Astro.url} />
 <meta
 	property="og:title"
-	content={title ? siteTitle + " - " + title : siteTitle}
+	content={title ? `${siteTitle} - ${title}` : siteTitle}
 />
 <meta property="og:description" content={description || siteDescription} />
 
@@ -81,7 +81,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="twitter:url" content={Astro.url} />
 <meta
 	property="twitter:title"
-	content={title ? siteTitle + " - " + title : siteTitle}
+	content={title ? `${siteTitle} - ${title}` : siteTitle}
 />
 <meta property="twitter:description" content={description || siteDescription} />
 <meta property="twitter:image" content={absoluteImage} />

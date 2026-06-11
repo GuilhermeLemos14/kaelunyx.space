@@ -113,6 +113,6 @@
 	}
 
 	footer {
-		@apply text-new-gray mx-auto w-[50%] border-t border-gray-400 px-4 pt-8 pb-24 text-center;
+		@apply text-new-gray mx-auto w-170 border-t border-gray-400 px-5 pt-8 pb-24 text-center;
 	}
 }

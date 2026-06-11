@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer components {
+	.index-nav {
+		@apply relative mx-auto flex min-w-55 flex-col items-center gap-5 text-center;
+
+		a {
+			@apply bg-cosmic-blue hover:bg-cosmic-blue-hover text-nav inline-block max-w-min min-w-[inherit] rounded-lg p-4 font-bold no-underline transition-colors duration-300;
+		}
+	}
+
+	.iframe-wrapper {
+		@apply mx-5;
+
+		> iframe {
+			@apply rounded-2xl;
+		}
+	}
+
+	.about-div {
+		@apply bg-background text-foreground z-10 mx-auto min-h-dvh max-w-3xl rounded-2xl px-8 py-5 shadow-[0_0_10px] shadow-[#0001] max-md:m-0 max-md:rounded-none;
+
+		p {
+			@apply my-3;
+		}
+	}
+
+	.about-nav {
+		@apply flex justify-center gap-6 py-2;
+
+		a {
+			@apply bg-button text-button-fg rounded-lg px-5 py-2.5 font-bold no-underline transition-colors duration-300 ease-linear;
+
+			&:hover,
+			&:focus-visible {
+				@apply bg-button-hover;
+			}
+
+			&:focus-visible {
+				@apply outline-cosmic-light outline-2 outline-offset-2 outline-solid;
+			}
+		}
+	}
+
+	.about-section {
+		@apply border-border border-t border-solid py-12;
+	}
+
+	.strong-paragraph {
+		@apply mx-6 mt-3 mb-2 block;
+	}
+
+	.ul-paragraph {
+		@apply my-2;
+	}
+
+	.icon {
+		@apply text-cosmic-light fill-cosmic-light max-h-8 max-w-8 transition-colors duration-300 ease-in-out;
+	}
+
+	.contact-link {
+		@apply relative inline-flex items-center justify-center rounded-lg p-2 outline-2 outline-transparent transition-all duration-300 ease-in-out outline-solid;
+
+		.hover-contact {
+			@apply bg-cosmic-dark text-cosmic-adaptive-blue absolute top-full left-1/2 -translate-x-1/2 translate-y-2 rounded-sm px-2 py-1 opacity-0 transition-all duration-300 ease-in-out;
+			visibility: hidden;
+		}
+
+		&:hover,
+		&:focus-visible {
+			@apply outline-cosmic-adaptive-blue shadow-[0_0_12px] shadow-[rgba(100,200,255,0.4)];
+
+			.icon {
+				@apply text-cosmic-adaptive-blue fill-cosmic-adaptive-blue;
+			}
+
+			.hover-contact {
+				@apply visible translate-0 opacity-100;
+			}
+		}
+	}
+
+	.custom-btn {
+		@apply bg-button text-button-fg font-default border-border hover:bg-button-hover block w-max cursor-pointer rounded-md px-4 py-2.5 transition-colors duration-300 ease-linear;
+	}
+}
