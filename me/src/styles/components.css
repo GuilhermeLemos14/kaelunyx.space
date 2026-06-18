@@ -55,7 +55,7 @@
 	}
 
 	.icon {
-		@apply text-cosmic-light fill-cosmic-light max-h-8 max-w-8 transition-colors duration-300 ease-in-out;
+		@apply text-cosmic-light fill-current max-h-8 max-w-8 transition-colors duration-300 ease-in-out;
 	}
 
 	.contact-link {
@@ -71,7 +71,7 @@
 			@apply outline-cosmic-adaptive-blue shadow-[0_0_12px] shadow-[rgba(100,200,255,0.4)];
 
 			.icon {
-				@apply text-cosmic-adaptive-blue fill-cosmic-adaptive-blue;
+				@apply text-cosmic-adaptive-blue fill-current;
 			}
 
 			.hover-contact {

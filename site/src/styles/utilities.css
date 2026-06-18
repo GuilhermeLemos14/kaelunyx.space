@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer utilities {
+	:has(+ [required])::after {
+		@apply text-red-600;
+		content: " *";
+	}
+
+	:not(form):invalid {
+		@apply outline-2 outline-red-600 outline-solid;
+	}
+}

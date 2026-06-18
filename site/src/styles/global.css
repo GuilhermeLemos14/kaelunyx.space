@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 @import "./theme.css";
+@import "./components.css";
+@import "./utilities.css";
 
 @layer base {
 	html {
-		@apply overflow-x-hidden scroll-smooth;
+		@apply overflow-x-hidden scroll-smooth **:text-balance;
 	}
 
 	body {
@@ -65,74 +67,20 @@
 	}
 
 	button {
-		padding: 10px 15px;
-		background-color: var(--bg-primary);
-		color: var(--fg-secondary);
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-		font-size: 1rem;
+		@apply bg-primary-bg text-secondary-fg cursor-pointer rounded-sm border-none px-2.5 py-4 text-[1rem];
 
 		&:hover,
 		&:focus-visible {
-			background-color: var(--bg-secondary);
+			@apply bg-secondary-bg;
 		}
 	}
 
 	label {
-		display: block;
-		font-weight: bold;
-		margin-bottom: 0.25rem;
+		@apply mb-1 block font-bold;
 	}
 
 	footer {
 		@apply bg-secondary-bg border-border mt-auto border-t border-solid p-8 text-center;
-	}
-}
-
-@layer components {
-	.nav-wrapper {
-		@apply border-border mx-auto mt-5 max-w-5xl overflow-x-auto border-t border-b border-solid;
-
-		nav {
-			@apply flex h-full w-full flex-wrap justify-between gap-6 px-2 py-4;
-		}
-
-		ul {
-			@apply flex list-none flex-nowrap gap-6;
-
-			a {
-				@apply text-accent hover:text-accent-hover rounded-sm no-underline transition-colors duration-200 hover:underline;
-
-				&:focus-visible {
-					@apply text-accent-hover outline-accent outline-2 outline-offset-2 outline-solid;
-				}
-			}
-		}
-	}
-
-	.widget {
-		@apply flex h-full max-w-3xl flex-col items-center gap-3;
-
-		:where(*) {
-			all: initial;
-			/* reset */
-		}
-	}
-
-	.copyright {
-		@apply text-secondary-fg text-sm;
-	}
-}
-
-@layer utilities {
-	:has(+ [required])::after {
-		@apply text-red-600;
-		content: " *";
-	}
-
-	:not(form):invalid {
-		@apply outline-2 outline-red-600 outline-solid;
 	}
 }
 

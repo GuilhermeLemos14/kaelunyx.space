@@ -52,6 +52,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			:has(> footer) {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin-inline: auto;
+
+				footer {
+					width: 720px;
+					width: calc(100% - 2em);
+					margin: auto;
+					padding: 1em;
+				}
+			}
 		</style>
 	</head>
 	<body>

@@ -6,7 +6,7 @@
 
 @layer base {
 	html {
-		@apply overflow-x-hidden scroll-smooth;
+		@apply overflow-x-hidden scroll-smooth **:text-balance;
 	}
 
 	body {
@@ -112,7 +112,15 @@
 		@apply border-0 border-t border-solid border-gray-400;
 	}
 
-	footer {
-		@apply text-new-gray mx-auto w-170 border-t border-gray-400 px-5 pt-8 pb-24 text-center;
+	:has(> footer) {
+		@apply px-4 pt-8 pb-8 mx-auto mb-6 w-180 max-w-[calc(100%-2rem)];
+
+		footer {
+			@apply text-new-gray text-center mx-auto;
+
+			hr {
+				@apply mx-4 mb-6;
+			}
+		}
 	}
 }
